@@ -28,6 +28,20 @@
 			"Modern button",
 			"[Documentation](https://github.com/marius2502/bronco-button)",
 			"[Demo](https://bongarts.net/)"
-		]
+    ],
+    [
+			"Corner Navbar",
+			"`bronco-corner-navbar`",
+			"Modern circular navbar",
+			"[Documentation](https://github.com/marius2502/bronco-corner-navbar)",
+			"[Demo](https://bongarts.net/)"
+    ],
+    [
+			"Left Navbar",
+			"`bronco-left-navbar`",
+			"Modern left side navbar",
+			"[Documentation](https://github.com/marius2502/bronco-left-navbar)",
+			"[Demo](https://bongarts.net/)"
+    ]
 	]
 }

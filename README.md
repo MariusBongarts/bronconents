@@ -9,7 +9,7 @@ Welcome to @marius/bronconents. This is version 1.0.0!
 
 <p align="center">
   <b>Modern Web Components built with Lit-Element</b></br>
-  <sub>Use this starter kit to build your own lightweight web components<sub>
+  <sub>Use this small and modern Web Components everywhere easily<sub>
 </p>
 
 <br />
@@ -52,9 +52,11 @@ import '@marius/[PUT-TAGNAME-HERE]/dist/main';
 ## ➤ Elements
 
 
-| Name   | Tag             | Description   | Documentation                                    | Demo                          |
-|--------|-----------------|---------------|--------------------------------------------------|-------------------------------|
-| Button | `bronco-button` | Modern button | [Documentation](https://github.com/marius2502/bronco-button) | [Demo](https://bongarts.net/) |
+| Name          | Tag                    | Description             | Documentation                                    | Demo                          |
+|---------------|------------------------|-------------------------|--------------------------------------------------|-------------------------------|
+| Button        | `bronco-button`        | Modern button           | [Documentation](https://github.com/marius2502/bronco-button) | [Demo](https://bongarts.net/) |
+| Corner Navbar | `bronco-corner-navbar` | Modern circular navbar  | [Documentation](https://github.com/marius2502/bronco-corner-navbar) | [Demo](https://bongarts.net/) |
+| Left Navbar   | `bronco-left-navbar`   | Modern left side navbar | [Documentation](https://github.com/marius2502/bronco-left-navbar) | [Demo](https://bongarts.net/) |
 
 
 
