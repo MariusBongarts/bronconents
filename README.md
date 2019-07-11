@@ -54,7 +54,7 @@ import '@marius/broncobutton/dist/main';
 
 | Name   | Tag             | Description   | Documentation                                    | Demo                          |
 |--------|-----------------|---------------|--------------------------------------------------|-------------------------------|
-| Button | `bronco-button` | Modern button | [Documentation](https://github.com/marius2502/bronco-button/tree/c48dd867966be814a50909a08f3108eb7701a60b) | [Demo](https://bongarts.net/) |
+| Button | `bronco-button` | Modern button | [Documentation](https://github.com/marius2502/bronco-button) | [Demo](https://bongarts.net/) |
 
 
 
