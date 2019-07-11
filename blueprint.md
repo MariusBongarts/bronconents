@@ -13,11 +13,11 @@ See the componets [here](https://bongarts.net).
 ## Installation
 
 ```
-$ npm i https://github.com/marius2502/[PUT-NAME-HERE].git
+$ npm i https://github.com/marius2502/[PUT-TAGNAME-HERE].git
 ```
 
 ```javascript
-import '@marius/broncobutton/dist/main';
+import '@marius/[PUT-TAGNAME-HERE]/dist/main';
 ```
 
 ## Elements
