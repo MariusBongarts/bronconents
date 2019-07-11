@@ -12,7 +12,7 @@ export class AppRoot extends LitElement {
   static styles = css`${unsafeCSS(componentCSS)}`;
 
   @property()
-  navItems = ['bronco-button', 'bronco-left-navbar'];
+  navItems = ['bronco-button','bronco-corner-navbar', 'bronco-left-navbar'];
 
   @property()
   selectedItem: string | any;
@@ -63,6 +63,10 @@ export class AppRoot extends LitElement {
 
           <section id='bronco-button'>
             <button-overview></button-overview>
+          </section>
+
+          <section id='bronco-corner-navbar'>
+            <corner-navbar-overview></corner-navbar-overview>
           </section>
 
           <section id='bronco-left-navbar'>
