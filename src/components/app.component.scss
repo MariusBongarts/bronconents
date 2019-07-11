@@ -1,2 +1,7 @@
 @import "../variables.scss";
 @import "../customBootstrap.scss";
+
+bronco-left-navbar {
+  --position: fixed;
+  --margin-top: 10vh;
+}

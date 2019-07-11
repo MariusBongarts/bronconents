@@ -12,7 +12,7 @@ export class AppRoot extends LitElement {
   static styles = css`${unsafeCSS(componentCSS)}`;
 
   @property()
-  navItems = ['marius-button', 'marius-navbar', 'marius-left-navbar', 'marius-fifa-card'];
+  navItems = ['bronco-button', 'bronco-left-navbar'];
 
   @property()
   selectedItem: string | any;
@@ -21,6 +21,7 @@ export class AppRoot extends LitElement {
   sectionElements!: HTMLElement[];
 
   firstUpdated() {
+    this.selectedItem = this.navItems[0];
     window.addEventListener('scroll', () => {
       this.sectionElements.forEach(e => {
         (e.offsetTop - 200) < document.documentElement.scrollTop ? this.selectedItem = e.getAttribute('id') : '';
@@ -38,25 +39,34 @@ export class AppRoot extends LitElement {
     this.sectionElements.forEach(e => {
       if (e.getAttribute('id') === item) sectionElement = e;
     });
-    window.scrollTo(0, sectionElement.offsetTop);
+    window.scrollTo({
+      top: sectionElement.offsetTop,
+      left: 0,
+      behavior: 'smooth'
+    });
   }
 
   render() {
     return html`
     <div class="container-fluid w-100">
-      <marius-top-navbar></marius-top-navbar>
+      <bronco-corner-navbar hideOnScrolling="true" @selected=${(e: CustomEvent) => console.log(e.detail)}></bronco-corner-navbar>
+      <bronco-top-navbar></bronco-top-navbar>
       <div class="row">
         <div class="d-none d-lg-block col-2 p-0 m-0">
-          <marius-left-navbar .navItems=${this.navItems} selectedItem=${this.selectedItem} @clicked=${(e: CustomEvent) =>
+          <bronco-left-navbar .navItems=${this.navItems} selectedItem=${this.selectedItem} @selected=${(e: CustomEvent) =>
               this.scrollToSection(e.detail)}
             >
-          </marius-left-navbar>
+          </bronco-left-navbar>
         </div>
         <div class="col-12 col-lg-10 py-5 p-lg-5">
 
 
-          <section id='marius-button'>
+          <section id='bronco-button'>
             <button-overview></button-overview>
+          </section>
+
+          <section id='bronco-left-navbar'>
+            <left-navbar-overview></left-navbar-overview>
           </section>
 
 
@@ -64,9 +74,7 @@ export class AppRoot extends LitElement {
             <navbar-overview></navbar-overview>
           </section>
 
-          <section id='marius-left-navbar'>
-            <left-navbar-overview></left-navbar-overview>
-          </section>
+
 
           <section id='marius-fifa-card'>
             <fifa-card-overview></fifa-card-overview>

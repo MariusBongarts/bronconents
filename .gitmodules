@@ -1,3 +1,9 @@
 [submodule "bronco-button"]
 	path = bronco-button
 	url = https://github.com/marius2502/bronco-button.git
+[submodule "bronco-left-navbar"]
+	path = bronco-left-navbar
+	url = https://github.com/marius2502/bronco-left-navbar.git
+[submodule "bronco-corner-navbar"]
+	path = bronco-corner-navbar
+	url = https://github.com/marius2502/bronco-corner-navbar.git

@@ -11,7 +11,7 @@ class AppComponent extends LitElement {
   render() {
     return html`
 
-      <div class="row my-2 pt-5">
+      <div class="row my-5 pt-5">
         <div class="col-12">
           <h5>bronco-button</h5>
         </div>
@@ -41,7 +41,7 @@ class AppComponent extends LitElement {
           <br>
           <br>
           <span class="tag">&ltbronco-button<span class="attribute p-0 m-0"> outline outlineeffect</span>></span>
-          <span style="color:white">Outlineffect</span>
+          <span style="color:white">Both</span>
           <span class="tag">&lt/bronco-button></span>
         </div>
         <div class="col-12 col-lg-6 btns mt-5 mt-lg-0 d-flex align-items-center justify-content-center">
