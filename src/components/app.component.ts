@@ -12,7 +12,7 @@ export class AppRoot extends LitElement {
   static styles = css`${unsafeCSS(componentCSS)}`;
 
   @property()
-  navItems = ['bronco-button','bronco-corner-navbar', 'bronco-left-navbar'];
+  navItems = ['bronco-button','bronco-corner-navbar', 'bronco-left-navbar', 'bronco-top-navbar'];
 
   @property()
   selectedItem: string | any;
@@ -49,8 +49,9 @@ export class AppRoot extends LitElement {
   render() {
     return html`
     <div class="container-fluid w-100">
-      <bronco-corner-navbar hideOnScrolling="true" @selected=${(e: CustomEvent) => console.log(e.detail)}></bronco-corner-navbar>
-      <bronco-top-navbar></bronco-top-navbar>
+      <bronco-corner-navbar hideOnScrolling="true" hideOnTop="true"
+      @selected=${(e: CustomEvent) => console.log(e.detail)}></bronco-corner-navbar>
+      <bronco-top-navbar hideOnNotTop="true"></bronco-top-navbar>
       <div class="row">
         <div class="d-none d-lg-block col-2 p-0 m-0">
           <bronco-left-navbar .navItems=${this.navItems} selectedItem=${this.selectedItem} @selected=${(e: CustomEvent) =>
@@ -71,6 +72,10 @@ export class AppRoot extends LitElement {
 
           <section id='bronco-left-navbar'>
             <left-navbar-overview></left-navbar-overview>
+          </section>
+
+          <section id='bronco-top-navbar'>
+            <top-navbar-overview></top-navbar-overview>
           </section>
 
 

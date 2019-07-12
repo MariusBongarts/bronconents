@@ -7,3 +7,6 @@
 [submodule "bronco-corner-navbar"]
 	path = bronco-corner-navbar
 	url = https://github.com/marius2502/bronco-corner-navbar.git
+[submodule "bronco-top-navbar"]
+	path = bronco-top-navbar
+	url = https://github.com/marius2502/bronco-top-navbar.git

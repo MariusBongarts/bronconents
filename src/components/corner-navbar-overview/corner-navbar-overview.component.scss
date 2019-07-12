@@ -3,7 +3,9 @@
 
 
 bronco-corner-navbar {
-  --position: relative;
+  --position: absolute;
+  --right: 0;
+  --top: 10px;
 }
 
 .green {

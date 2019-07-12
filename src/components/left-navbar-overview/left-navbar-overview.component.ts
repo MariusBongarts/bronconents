@@ -59,29 +59,30 @@ class AppComponent extends LitElement {
           </a>
           <br>
           <br>
-          <span class="tag">&ltbronco-left-navbar></span>
-          <span class="tag">&lt/bronco-left-navbar></span>
-          <br>
-          <br>
-          <!-- Styling -->
-          <span class="tag">&ltstyle></span>
-          <br>
-          <span style="color:white">
-            <br>
-            <span class="tag">bronco-left-navbar<span style="color:white"> {</span></span>
-            <br>
-            <span class="attribute">--position: <span class="attributeName">relative;</span></span>
-            <br>
-            <span class="attribute">--primary-color: <span class="attributeName">rgb(52, 255, 52);</span></span>
-            <br>
-            <span style="color:white">}</span>
+          <span class="tag">&ltbronco-left-navbar
+            <span class="attribute">effect3d=<span class="attributeName">"false"<span class="tag">></span></span></span>
+            <span class="tag">&lt/bronco-left-navbar></span>
             <br>
             <br>
-            <span class="tag">&lt/style></span>
+            <!-- Styling -->
+            <span class="tag">&ltstyle></span>
+            <br>
+            <span style="color:white">
+              <br>
+              <span class="tag">bronco-left-navbar<span style="color:white"> {</span></span>
+              <br>
+              <span class="attribute">--position: <span class="attributeName">relative;</span></span>
+              <br>
+              <span class="attribute">--primary-color: <span class="attributeName">rgb(52, 255, 52);</span></span>
+              <br>
+              <span style="color:white">}</span>
+              <br>
+              <br>
+              <span class="tag">&lt/style></span>
         </div>
         <div class="col-12 col-lg-6">
           <div class="row d-flex justify-content-center">
-            <bronco-left-navbar class="green"></bronco-left-navbar>
+            <bronco-left-navbar effect3d=${false} class="green"></bronco-left-navbar>
           </div>
         </div>
       </div>

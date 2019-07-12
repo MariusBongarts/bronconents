@@ -5,8 +5,10 @@ import './components/app.component.ts';
 import './components/button-overview/button-overview.component';
 import './components/left-navbar-overview/left-navbar-overview.component';
 import './components/corner-navbar-overview/corner-navbar-overview.component';
+import './components/top-navbar-overview/top-navbar-overview.component';
 
 // Externe components
 import './../bronco-button/src/components/app.component';
 import './../bronco-left-navbar/src/components/app.component';
 import './../bronco-corner-navbar/src/components/app.component';
+import './../bronco-top-navbar/src/components/app.component';
