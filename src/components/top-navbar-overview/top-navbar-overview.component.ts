@@ -24,8 +24,8 @@ class AppComponent extends LitElement {
         <div class="col-12 col-lg-6 componentInfo">
           <span class="comment">&lt!-- Detailed Documentation on <a class="comment" target="_blank" href="https://github.com/marius2502/bronco-top-navbar"
               class="attributeName"><strong>Github</strong></a> --></span>
-          <a style="float:right" target="_blank" href="https://codepen.io/marius2502/pen/pXYwYB">
-            <wl-icon target="_blank" href="https://codepen.io/marius2502/pen/pXYwYB">launch</wl-icon>
+          <a style="float:right" target="_blank" href="https://codepen.io/marius2502/pen/gNyWWV">
+            <wl-icon target="_blank" href="https://codepen.io/marius2502/pen/gNyWWV">launch</wl-icon>
           </a>
           <br>
           <br>
