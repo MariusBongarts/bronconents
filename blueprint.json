@@ -42,6 +42,13 @@
 			"Modern left side navbar",
 			"[Documentation](https://github.com/marius2502/bronco-left-navbar)",
 			"[Demo](https://bongarts.net/)"
+		],
+		[
+			"Top Navbar",
+			"`bronco-top-navbar`",
+			"Modern and responsive top bar",
+			"[Documentation](https://github.com/marius2502/bronco-top-navbar)",
+			"[Demo](https://bongarts.net/)"
     ]
 	]
 }
