@@ -18,7 +18,7 @@ module.exports = {
       },
       {
         test: /\.(woff(2)?|ttf|eot|svg|png)(\?v=\d+\.\d+\.\d+)?$/,
-        use: [{ loader: 'file-loader', options: { outputPath: 'assets/' } }]
+        use: [{ loader: 'file-loader', options: { outputPath: 'assets/', publicPath: '/assets' } } ]
       }
     ]
   },
