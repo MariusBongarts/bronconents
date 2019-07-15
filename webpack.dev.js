@@ -18,7 +18,7 @@ module.exports = {
       { loader: 'css-loader', options: { sourceMap: true } },
       { loader: 'sass-loader', options: { sourceMap: true } } ] },
     {
-      test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+      test: /\.(woff(2)?|ttf|eot|svg|png)(\?v=\d+\.\d+\.\d+)?$/,
       use: [ { loader: 'file-loader', options: { outputPath: 'assets/', publicPath: '/assets' } } ]
     }
   ] },

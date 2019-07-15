@@ -2,6 +2,8 @@ import { css, customElement, html, LitElement, property, unsafeCSS, queryAll, qu
 
 const componentCSS = require('./app.component.scss');
 
+const logoImg = require('./../assets/logo2.png');
+
 /**
  * @author Marius Bongarts
  * Root web component
@@ -22,6 +24,7 @@ export class AppRoot extends LitElement {
 
   firstUpdated() {
     this.selectedItem = this.navItems[0];
+
     window.addEventListener('scroll', () => {
       this.sectionElements.forEach(e => {
         (e.offsetTop - 200) < document.documentElement.scrollTop ? this.selectedItem = e.getAttribute('id') : '';
@@ -51,7 +54,11 @@ export class AppRoot extends LitElement {
     <div class="container-fluid w-100">
       <bronco-corner-navbar hideOnScrolling="true" hideOnTop="true"
       @selected=${(e: CustomEvent) => console.log(e.detail)}></bronco-corner-navbar>
-      <bronco-top-navbar hideOnNotTop="true"></bronco-top-navbar>
+
+      <bronco-top-navbar hideOnNotTop="true">
+    <img style="width:90%; height: 2em;" src="${logoImg}" slot="leftHeader">
+    </bronco-top-navbar>
+
       <div class="row">
         <div class="d-none d-lg-block col-2 p-0 m-0">
           <bronco-left-navbar .navItems=${this.navItems} selectedItem=${this.selectedItem} @selected=${(e: CustomEvent) =>

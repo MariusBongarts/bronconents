@@ -85,6 +85,36 @@
 
 /* 6 */
 
+/* 7 */
+
+/* 8 */
+
+/* 9 */
+
+/* 10 */
+
+/* 11 */
+
+/* 12 */
+
+/* 13 */
+
+/* 14 */
+
+/* 15 */
+
+/* 16 */
+
+/* 17 */
+
+/* 18 */
+
+/* 19 */
+
+/* 20 */
+
+/* 21 */
+
 // EXTERNAL MODULE: ./src/index.scss
 
 // CONCATENATED MODULE: ./node_modules/lit-html/lib/directive.js
@@ -957,6 +987,8 @@
 
 // CONCATENATED MODULE: ./node_modules/lit-element/lib/decorators.js
 
+// This callback is called once the class is otherwise fully defined
+
 // When decorating an accessor, pass it through and add property metadata.
 
 // Note, the `hasOwnProperty` check in `createProperty` ensures we don't
@@ -982,6 +1014,21 @@
 // ],
 
 // tslint:disable-next-line:no-any decorator
+
+/**
+ * A property decorator which creates a LitElement property which reflects a
+ * corresponding attribute value. A `PropertyDeclaration` may optionally be
+ * supplied to configure property features.
+ *
+ * @ExportDecoratedItems
+ */
+
+/**
+ * A property decorator that converts a class property into a getter that
+ * executes a querySelector on the element's renderRoot.
+ *
+ * @ExportDecoratedItems
+ */
 
 // Note, this is a getter so that it's lazy. In practice, this means
 
@@ -1156,29 +1203,51 @@
      * Root web component
      */
 
-/**
-         * Title of this component
-         * @attr
-         * @type {string}
-         * @memberof AppComponent
-         */
+// If scrolled to bottom
 
 /**
- * A property decorator which creates a LitElement property which reflects a
- * corresponding attribute value. A `PropertyDeclaration` may optionally be
- * supplied to configure property features.
+ * A property decorator that converts a class property into a getter
+ * that executes a querySelectorAll on the element's renderRoot.
  *
  * @ExportDecoratedItems
  */
 
-/**
- * A property decorator that converts a class property into a getter that
- * executes a querySelector on the element's renderRoot.
- *
- * @ExportDecoratedItems
- */
+// CONCATENATED MODULE: ./node_modules/weightless/util/css.js
 
-// This callback is called once the class is otherwise fully defined
+// CONCATENATED MODULE: ./node_modules/tslib/tslib.es6.js
+
+/*! *****************************************************************************
+Copyright (c) Microsoft Corporation. All rights reserved.
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+this file except in compliance with the License. You may obtain a copy of the
+License at http://www.apache.org/licenses/LICENSE-2.0
+
+THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
+WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
+MERCHANTABLITY OR NON-INFRINGEMENT.
+
+See the Apache Version 2.0 License for specific language governing permissions
+and limitations under the License.
+***************************************************************************** */
+
+/* global Reflect, Promise */
+
+// CONCATENATED MODULE: ./node_modules/weightless/style/shared.js
+
+// CONCATENATED MODULE: ./node_modules/weightless/icon/icon.scss.js
+
+// CONCATENATED MODULE: ./node_modules/weightless/icon/icon.js
+
+// CONCATENATED MODULE: ./node_modules/weightless/icon/index.js
+
+// CONCATENATED MODULE: ./src/components/button-overview/button-overview.component.ts
+
+// CONCATENATED MODULE: ./src/components/left-navbar-overview/left-navbar-overview.component.ts
+
+// CONCATENATED MODULE: ./src/components/corner-navbar-overview/corner-navbar-overview.component.ts
+
+// CONCATENATED MODULE: ./src/components/top-navbar-overview/top-navbar-overview.component.ts
 
 // CONCATENATED MODULE: ./bronco-button/node_modules/lit-html/lib/directive.js
 
@@ -1207,13 +1276,385 @@
 // CONCATENATED MODULE: ./bronco-button/src/components/app.component.ts
 
 /**
- * Allow users to take actions, and make choices, with a single tap.
+ * Modern button
+ * @event clicked - Dispatches when button is clicked.
  * @slot - Default content.
- * @cssprop --button-letter-spacing - Letter spacing
+ * @cssprop --bg-color - Background color
+ * @cssprop --bg-color-focus - Background color when focused
+ * @cssprop --bg-color-hover - Background color when hovered
+ * @cssprop --bg-color-focus-hover - Background color when focused and hovered
+ * @cssprop --border-radius - Border radius
+ * @cssprop --button-color-shadow - Shadow color when not focused
+ * @cssprop --button-color-shadow-focus - Shadow color when focused
+ * @cssprop --color - text color
+ * @cssprop --color-focus-hover - text color when focused and hovered
+ * @cssprop --height - Height of button
+ * @cssprop --margin - Margin of button
+ * @cssprop --min-width - Width of button
+ * @cssprop --primary-color - Change primary color easily
+ * @cssprop --primary-color-hover - Hover background color
+ *
  */
 
 /**
-     * Allow users to take actions, and make choices, with a single tap.
+     * Modern button
+     * @event clicked - Dispatches when button is clicked.
      * @slot - Default content.
-     * @cssprop --button-letter-spacing - Letter spacing
+     * @cssprop --bg-color - Background color
+     * @cssprop --bg-color-focus - Background color when focused
+     * @cssprop --bg-color-hover - Background color when hovered
+     * @cssprop --bg-color-focus-hover - Background color when focused and hovered
+     * @cssprop --border-radius - Border radius
+     * @cssprop --button-color-shadow - Shadow color when not focused
+     * @cssprop --button-color-shadow-focus - Shadow color when focused
+     * @cssprop --color - text color
+     * @cssprop --color-focus-hover - text color when focused and hovered
+     * @cssprop --height - Height of button
+     * @cssprop --margin - Margin of button
+     * @cssprop --min-width - Width of button
+     * @cssprop --primary-color - Change primary color easily
+     * @cssprop --primary-color-hover - Hover background color
+     *
      */
+
+/**
+         *
+         * Makes the button outlined
+         * @type {boolean}
+         * @memberof BroncoButton
+         */
+
+/**
+         * Enables the outline effect after clicking
+         * @type {boolean}
+         * @memberof BroncoButton
+         */
+
+// CONCATENATED MODULE: ./bronco-left-navbar/node_modules/lit-html/lib/directive.js
+
+// CONCATENATED MODULE: ./bronco-left-navbar/node_modules/lit-html/lib/template-instance.js
+
+// CONCATENATED MODULE: ./bronco-left-navbar/node_modules/lit-html/lib/template-result.js
+
+// CONCATENATED MODULE: ./bronco-left-navbar/node_modules/lit-html/lib/parts.js
+
+// CONCATENATED MODULE: ./bronco-left-navbar/node_modules/lit-html/lib/default-template-processor.js
+
+// CONCATENATED MODULE: ./bronco-left-navbar/node_modules/lit-html/lib/template-factory.js
+
+// CONCATENATED MODULE: ./bronco-left-navbar/node_modules/lit-html/lib/render.js
+
+// CONCATENATED MODULE: ./bronco-left-navbar/node_modules/lit-html/lit-html.js
+
+// CONCATENATED MODULE: ./bronco-left-navbar/node_modules/lit-html/lib/shady-render.js
+
+// CONCATENATED MODULE: ./bronco-left-navbar/node_modules/lit-element/lib/updating-element.js
+
+// CONCATENATED MODULE: ./bronco-left-navbar/node_modules/lit-element/lib/decorators.js
+
+// CONCATENATED MODULE: ./bronco-left-navbar/node_modules/lit-element/lit-element.js
+
+// CONCATENATED MODULE: ./bronco-left-navbar/node_modules/lit-html/directives/class-map.js
+
+/**
+ * @license
+ * Copyright (c) 2018 The Polymer Project Authors. All rights reserved.
+ * This code may only be used under the BSD style license found at
+ * http://polymer.github.io/LICENSE.txt
+ * The complete set of authors may be found at
+ * http://polymer.github.io/AUTHORS.txt
+ * The complete set of contributors may be found at
+ * http://polymer.github.io/CONTRIBUTORS.txt
+ * Code distributed by Google as part of the polymer project is also
+ * subject to an additional IP rights grant found at
+ * http://polymer.github.io/PATENTS.txt
+ */
+
+// On IE11, classList.toggle doesn't accept a second argument.
+
+// Since this is so minor, we just polyfill it.
+
+/**
+ * Stores the ClassInfo object applied to a given AttributePart.
+ * Used to unset existing values when a new ClassInfo object is applied.
+ */
+
+// handle static classes
+
+// remove old classes that no longer apply
+
+// add new classes
+
+// We explicitly want a loose truthy check here because
+
+// it seems more convenient that '' and 0 are skipped.
+
+/**
+ * Stores AttributeParts that have had static classes applied (e.g. `foo` in
+ * class="foo ${classMap()}"). Static classes are applied only the first time
+ * the directive is run on a part.
+ */
+
+// Note, could be a WeakSet, but prefer not requiring this polyfill.
+
+//# sourceMappingURL=class-map.js.map
+
+// CONCATENATED MODULE: ./bronco-left-navbar/src/components/app.component.ts
+
+/**
+ * Modern left navbar built with Lit-Element
+ * @event selected - Dispatches a CustomEvent when nav item is selected. Selected item is stored in detail of Custom event
+ * @cssprop --bg-color - Background color
+ * @cssprop --bg-color-hover - Background color when hovered
+ * @cssprop --color - text color
+ * @cssprop --color-hover - text color when hovered
+ * @cssprop --color-selected - text color when item is selected
+ * @cssprop --item-width - Width of nav items
+ * @cssprop --item-height - Height of nav items
+ * @cssprop --margin-top - Margin to the top
+ * @cssprop --min-width - Width of button
+ * @cssprop --position - Possible change position attribute
+ * @cssprop --primary-color - Change primary color easily
+ * @cssprop --rotation-3d - Customize the rotation of the rotation effect by changing degree (Default: 10deg)
+ * @cssprop --shadow-x - Shadow-x of button
+ * @cssprop --shadow-y - Shadow-y of button
+ * @cssprop --z-index - Default: 1
+ */
+
+/**
+     * Modern left navbar built with Lit-Element
+     * @event selected - Dispatches a CustomEvent when nav item is selected. Selected item is stored in detail of Custom event
+     * @cssprop --bg-color - Background color
+     * @cssprop --bg-color-hover - Background color when hovered
+     * @cssprop --color - text color
+     * @cssprop --color-hover - text color when hovered
+     * @cssprop --color-selected - text color when item is selected
+     * @cssprop --item-width - Width of nav items
+     * @cssprop --item-height - Height of nav items
+     * @cssprop --margin-top - Margin to the top
+     * @cssprop --min-width - Width of button
+     * @cssprop --position - Possible change position attribute
+     * @cssprop --primary-color - Change primary color easily
+     * @cssprop --rotation-3d - Customize the rotation of the rotation effect by changing degree (Default: 10deg)
+     * @cssprop --shadow-x - Shadow-x of button
+     * @cssprop --shadow-y - Shadow-y of button
+     * @cssprop --z-index - Default: 1
+     */
+
+/**
+         * Takes an array to set the nav items of this components
+         * @type {string[]}
+         * @memberof BroncoLeftNavbar
+         */
+
+/**
+         * Sets selected item. Default is first item
+         * @type {string}
+         * @memberof BroncoLeftNavbar
+         */
+
+/**
+         * Enable or disable the 3d effect of the list items
+         * @type {boolean}
+         * @memberof BroncoLeftNavbar
+         */
+
+// CONCATENATED MODULE: ./bronco-corner-navbar/node_modules/lit-html/lib/directive.js
+
+// CONCATENATED MODULE: ./bronco-corner-navbar/node_modules/lit-html/lib/template-instance.js
+
+// CONCATENATED MODULE: ./bronco-corner-navbar/node_modules/lit-html/lib/template-result.js
+
+// CONCATENATED MODULE: ./bronco-corner-navbar/node_modules/lit-html/lib/parts.js
+
+// CONCATENATED MODULE: ./bronco-corner-navbar/node_modules/lit-html/lib/default-template-processor.js
+
+// CONCATENATED MODULE: ./bronco-corner-navbar/node_modules/lit-html/lib/template-factory.js
+
+// CONCATENATED MODULE: ./bronco-corner-navbar/node_modules/lit-html/lib/render.js
+
+// CONCATENATED MODULE: ./bronco-corner-navbar/node_modules/lit-html/lit-html.js
+
+// CONCATENATED MODULE: ./bronco-corner-navbar/node_modules/lit-html/lib/shady-render.js
+
+// CONCATENATED MODULE: ./bronco-corner-navbar/node_modules/lit-element/lib/updating-element.js
+
+// CONCATENATED MODULE: ./bronco-corner-navbar/node_modules/lit-element/lib/decorators.js
+
+// CONCATENATED MODULE: ./bronco-corner-navbar/node_modules/lit-element/lit-element.js
+
+// CONCATENATED MODULE: ./bronco-corner-navbar/src/components/app.component.ts
+
+/**
+ * Modern corner circular navbar built with Lit-Element
+ * @event selected - Dispatches a CustomEvent when nav item is selected. Selected item is stored in detail of Custom event
+ * @cssprop --bg-color-item - Background color of item, when not hovered or selected
+ * @cssprop --circle-color-transparent1 - First, less transparent, color of circle
+ * @cssprop --circle-color-transparent2 - Second, more transparent, color of circle
+ * @cssprop --circle-radius - Sets the radius of the inner circle
+ * @cssprop --color - text color
+ * @cssprop --bg-color-hover - Color when item is hovered
+ * @cssprop --item-radius - Radius of the nav items inside of circle
+ * @cssprop --item-shadow - Shadow of item, when not selected
+ * @cssprop --item-shadow-selected - Shadow of item, when selected
+ * @cssprop --position - Default: fixed
+ * @cssprop --primary-color - Change primary color easily
+ * @cssprop --right - Position of icon
+ * @cssprop --shadow-x - Shadow-x of item
+ * @cssprop --shadow-y - Shadow-y of item
+ * @cssprop --top - Position of icon
+ * @cssprop --z-index - Default: 3
+ */
+
+/**
+     * Modern corner circular navbar built with Lit-Element
+     * @event selected - Dispatches a CustomEvent when nav item is selected. Selected item is stored in detail of Custom event
+     * @cssprop --bg-color-item - Background color of item, when not hovered or selected
+     * @cssprop --circle-color-transparent1 - First, less transparent, color of circle
+     * @cssprop --circle-color-transparent2 - Second, more transparent, color of circle
+     * @cssprop --circle-radius - Sets the radius of the inner circle
+     * @cssprop --color - text color
+     * @cssprop --bg-color-hover - Color when item is hovered
+     * @cssprop --item-radius - Radius of the nav items inside of circle
+     * @cssprop --item-shadow - Shadow of item, when not selected
+     * @cssprop --item-shadow-selected - Shadow of item, when selected
+     * @cssprop --position - Default: fixed
+     * @cssprop --primary-color - Change primary color easily
+     * @cssprop --right - Position of icon
+     * @cssprop --shadow-x - Shadow-x of item
+     * @cssprop --shadow-y - Shadow-y of item
+     * @cssprop --top - Position of icon
+     * @cssprop --z-index - Default: 3
+     */
+
+/**
+         * Takes an array to set (minimum: 3, maximum 5) nav items, of this component
+         * @type {string[]}
+         * @memberof AppRoot
+         */
+
+/**
+         * Attribute, which is set to true when navbar is open
+         * @type {boolean}
+         * @memberof BroncoCornerNavbar
+         */
+
+/**
+         * Sets selected item. Default is first item
+         * @type {string}
+         * @memberof BroncoCornerNavbar
+         */
+
+/**
+         * Makes the navbar disappear, when user is scrolling
+         * @type {boolean}
+         * @memberof BroncoCornerNavbar
+         */
+
+/**
+         * Makes the navbar disappear, when window is scrolled to the top
+         * @type {boolean}
+         * @memberof BroncoCornerNavbar
+         */
+
+// Closes corner navbar when clicking outside of navbar
+
+// CONCATENATED MODULE: ./bronco-top-navbar/node_modules/lit-html/lib/directive.js
+
+// CONCATENATED MODULE: ./bronco-top-navbar/node_modules/lit-html/lib/template-instance.js
+
+// CONCATENATED MODULE: ./bronco-top-navbar/node_modules/lit-html/lib/template-result.js
+
+// CONCATENATED MODULE: ./bronco-top-navbar/node_modules/lit-html/lib/parts.js
+
+// CONCATENATED MODULE: ./bronco-top-navbar/node_modules/lit-html/lib/default-template-processor.js
+
+// CONCATENATED MODULE: ./bronco-top-navbar/node_modules/lit-html/lib/template-factory.js
+
+// CONCATENATED MODULE: ./bronco-top-navbar/node_modules/lit-html/lib/render.js
+
+// CONCATENATED MODULE: ./bronco-top-navbar/node_modules/lit-html/lit-html.js
+
+// CONCATENATED MODULE: ./bronco-top-navbar/node_modules/lit-html/lib/shady-render.js
+
+// CONCATENATED MODULE: ./bronco-top-navbar/node_modules/lit-element/lib/updating-element.js
+
+// CONCATENATED MODULE: ./bronco-top-navbar/node_modules/lit-element/lib/decorators.js
+
+// CONCATENATED MODULE: ./bronco-top-navbar/node_modules/lit-element/lit-element.js
+
+// CONCATENATED MODULE: ./bronco-top-navbar/src/components/app.component.ts
+
+/**
+ * Modern Top circular navbar built with Lit-Element
+ * @event selected - Dispatches a CustomEvent when nav item is selected. Selected item is stored in detail of Custom event
+ * @cssprop --bg-colorv - Background color of item, when not hovered or selected
+ * @cssprop --color - text color
+ * @cssprop --height - Navbar height
+ * @cssprop --position - Positioning of navBar. Default: fixed
+ * @cssprop --primary-color - Change primary color easily
+ * @cssprop --width - Navbar width. Default: 100vw
+ * @cssprop --z-index - Default: 2
+ */
+
+/**
+     * Modern Top circular navbar built with Lit-Element
+     * @event selected - Dispatches a CustomEvent when nav item is selected. Selected item is stored in detail of Custom event
+     * @cssprop --bg-colorv - Background color of item, when not hovered or selected
+     * @cssprop --color - text color
+     * @cssprop --height - Navbar height
+     * @cssprop --position - Positioning of navBar. Default: fixed
+     * @cssprop --primary-color - Change primary color easily
+     * @cssprop --width - Navbar width. Default: 100vw
+     * @cssprop --z-index - Default: 2
+     */
+
+/**
+         * Makes the navbar disappear on mobile devices
+         * @type {boolean}
+         * @memberof BroncoTopNavbar
+         */
+
+/**
+         * Makes the navbar disappear, when user is scrolling
+         * @type {boolean}
+         * @memberof BroncoTopNavbar
+         */
+
+/**
+         * Makes the navbar disappear, when window is not scrolled to the top
+         * @type {boolean}
+         * @memberof BroncoTopNavbar
+         */
+
+/**
+         * If true, either navbar is completely hidden, when hideOnMobile = true or only leftHeader and rightHeader are shown
+         * @type {boolean}
+         * @memberof BroncoTopNavbar
+         */
+
+/**
+         * Attribute, which is set to true when navbar is open
+         * @type {boolean}
+         * @memberof BroncoTopNavbar
+         */
+
+/**
+         * True, when window is scrolled to top
+         * @type {boolean}
+         * @memberof BroncoTopNavbar
+         */
+
+/**
+         * Sets selected item. Default is first item
+         * @type {string}
+         * @memberof BroncoTopNavbar
+         */
+
+/**
+         * Change the title of the navbar in the top left corner
+         * @type {string}
+         * @memberof BroncoTopNavbar
+         */
+
+// Closes Top navbar when clicking outside of navbar

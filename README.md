@@ -52,11 +52,12 @@ import '@marius/[PUT-TAGNAME-HERE]/dist/main';
 ## ➤ Elements
 
 
-| Name          | Tag                    | Description             | Documentation                                    | Demo                          |
-|---------------|------------------------|-------------------------|--------------------------------------------------|-------------------------------|
-| Button        | `bronco-button`        | Modern button           | [Documentation](https://github.com/marius2502/bronco-button) | [Demo](https://bongarts.net/) |
-| Corner Navbar | `bronco-corner-navbar` | Modern circular navbar  | [Documentation](https://github.com/marius2502/bronco-corner-navbar) | [Demo](https://bongarts.net/) |
-| Left Navbar   | `bronco-left-navbar`   | Modern left side navbar | [Documentation](https://github.com/marius2502/bronco-left-navbar) | [Demo](https://bongarts.net/) |
+| Name          | Tag                    | Description                   | Documentation                                    | Demo                          |
+|---------------|------------------------|-------------------------------|--------------------------------------------------|-------------------------------|
+| Button        | `bronco-button`        | Modern button                 | [Documentation](https://github.com/marius2502/bronco-button) | [Demo](https://bongarts.net/) |
+| Corner Navbar | `bronco-corner-navbar` | Modern circular navbar        | [Documentation](https://github.com/marius2502/bronco-corner-navbar) | [Demo](https://bongarts.net/) |
+| Left Navbar   | `bronco-left-navbar`   | Modern left side navbar       | [Documentation](https://github.com/marius2502/bronco-left-navbar) | [Demo](https://bongarts.net/) |
+| Top Navbar    | `bronco-top-navbar`    | Modern and responsive top bar | [Documentation](https://github.com/marius2502/bronco-top-navbar) | [Demo](https://bongarts.net/) |
 
 
 
