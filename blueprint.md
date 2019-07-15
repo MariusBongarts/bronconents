@@ -17,7 +17,7 @@ $ npm i https://github.com/marius2502/[PUT-TAGNAME-HERE].git
 ```
 
 ```javascript
-import '@marius/[PUT-TAGNAME-HERE]/dist/main';
+import '@marius/[packagename]/dist/main';
 ```
 
 ## Elements
