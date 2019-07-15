@@ -10,7 +10,7 @@ class AppComponent extends LitElement {
   render() {
     return html`
 
-      <div class="row my-5 pt-5">
+      <div class="row m-0 p-0 mt-5">
         <div class="col-12">
           <h5>bronco-button</h5>
         </div>
@@ -53,7 +53,7 @@ class AppComponent extends LitElement {
         </div>
       </div>
 
-      <div class="row my-2 mt-5">
+      <div class="row m-0 p-0 mt-5">
 
         <!-- Second with customized styles -->
         <div class="col-12 col-lg-6 componentInfo">

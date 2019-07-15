@@ -1,12 +1,13 @@
 {
   "name": "@marius/bronconents",
+  "identifier": "bronconent",
   "version": "1.0.0",
   "description": "Modern Web Components built with Lit-Element",
   "private": true,
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --config webpack.dev.js --open",
-    "build": "webpack --config webpack.prod.js --progress",
+    "build": "webpack --config webpack.prod.js",
     "lint": "tslint --force -t verbose -p tsconfig.json",
     "test": "karma start",
     "e2e": "tsc -p e2e && jasmine JASMINE_CONFIG_PATH=e2e/jasmine.json"

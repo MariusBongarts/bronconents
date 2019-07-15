@@ -12,3 +12,5 @@ import './../bronco-button/src/components/app.component';
 import './../bronco-left-navbar/src/components/app.component';
 import './../bronco-corner-navbar/src/components/app.component';
 import './../bronco-top-navbar/src/components/app.component';
+import './../bronco-side-navbar/src/components/app.component';
+import './../bronco-template/src/components/app.component';

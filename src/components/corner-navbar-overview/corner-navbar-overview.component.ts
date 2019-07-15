@@ -11,7 +11,7 @@ class AppComponent extends LitElement {
   render() {
     return html`
       <!-- bronco-corner-navbar -->
-      <div class="row my-2 pt-5 my-5">
+      <div class="row my-2 m-0 p-0 mt-5">
         <div class="col-12">
           <h5>bronco-corner-navbar</h5>
         </div>
@@ -50,7 +50,7 @@ class AppComponent extends LitElement {
       </div>
 
       <!-- bronco-corner-navbar customized -->
-      <div class="row my-2 pt-5 my-5">
+      <div class="row my-2 m-0 p-0 mt-5">
         <div class="col-12 col-lg-6 componentInfo">
           <span class="comment">&lt!-- Detailed Documentation on <a class="comment" target="_blank" href="https://github.com/marius2502/bronco-corner-navbar"
               class="attributeName"><strong>Github</strong></a> --></span>

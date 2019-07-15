@@ -14,7 +14,7 @@ export class AppRoot extends LitElement {
   static styles = css`${unsafeCSS(componentCSS)}`;
 
   @property()
-  navItems = ['bronco-button','bronco-corner-navbar', 'bronco-left-navbar', 'bronco-top-navbar'];
+  navItems = ['bronco-button', 'bronco-corner-navbar', 'bronco-left-navbar', 'bronco-top-navbar'];
 
   @property()
   selectedItem: string | any;
@@ -30,9 +30,9 @@ export class AppRoot extends LitElement {
         (e.offsetTop - 200) < document.documentElement.scrollTop ? this.selectedItem = e.getAttribute('id') : '';
 
         // If scrolled to bottom
-        if (document.documentElement.scrollTop === (document.documentElement.offsetHeight - window.innerHeight)) {
-          this.selectedItem = this.navItems[this.navItems.length - 1];
-        }
+        //     if (document.documentElement.offsetHeight - window.innerHeight === 0) {
+        //       this.selectedItem = this.navItems[this.navItems.length - 1];
+        //     }
       });
     });
   }
@@ -51,56 +51,41 @@ export class AppRoot extends LitElement {
 
   render() {
     return html`
-    <div class="container-fluid w-100">
-      <bronco-corner-navbar hideOnScrolling="true" hideOnTop="true"
-      @selected=${(e: CustomEvent) => console.log(e.detail)}></bronco-corner-navbar>
+    <bronco-template>
+      <div slot="header">
+        <bronco-corner-navbar hideOnScrolling="true" hideOnTop="true" @selected=${(e: CustomEvent) =>
+        console.log(e.detail)}></bronco-corner-navbar>
 
-      <bronco-top-navbar hideOnNotTop="true">
-    <img style="width:90%; height: 2em;" src="${logoImg}" slot="leftHeader">
-    </bronco-top-navbar>
-
-      <div class="row">
-        <div class="d-none d-lg-block col-2 p-0 m-0">
-          <bronco-left-navbar .navItems=${this.navItems} selectedItem=${this.selectedItem} @selected=${(e: CustomEvent) =>
-              this.scrollToSection(e.detail)}
-            >
-          </bronco-left-navbar>
-        </div>
-        <div class="col-12 col-lg-10 py-5 p-lg-5">
-
-
-          <section id='bronco-button'>
-            <button-overview></button-overview>
-          </section>
-
-          <section id='bronco-corner-navbar'>
-            <corner-navbar-overview></corner-navbar-overview>
-          </section>
-
-          <section id='bronco-left-navbar'>
-            <left-navbar-overview></left-navbar-overview>
-          </section>
-
-          <section id='bronco-top-navbar'>
-            <top-navbar-overview></top-navbar-overview>
-          </section>
-
-
-          <!-- <section id='marius-navbar'>
-            <navbar-overview></navbar-overview>
-          </section>
-
-
-
-          <section id='marius-fifa-card'>
-            <fifa-card-overview></fifa-card-overview>
-          </section> -->
-
-        </div>
+        <bronco-top-navbar hideOnNotTop="true">
+          <img style="width:90%; height: 2em;" src="${logoImg}" slot="leftHeader">
+        </bronco-top-navbar>
       </div>
 
+      <div slot="nav">
+        <bronco-side-navbar .navItems=${this.navItems} selectedItem=${this.selectedItem} @selected=${(e: CustomEvent) =>
+              this.scrollToSection(e.detail)}>
+        </bronco-side-navbar>
+      </div>
 
-    </div>
+      <div slot="main">
+        <section id='bronco-button'>
+          <button-overview></button-overview>
+        </section>
+
+        <section id='bronco-corner-navbar'>
+          <corner-navbar-overview></corner-navbar-overview>
+        </section>
+
+        <section id='bronco-left-navbar'>
+          <left-navbar-overview></left-navbar-overview>
+        </section>
+
+        <section id='bronco-top-navbar'>
+          <top-navbar-overview></top-navbar-overview>
+        </section>
+      </div>
+    </bronco-template>
+
 `;
   }
 

@@ -10,3 +10,23 @@ bronco-left-navbar {
 bronco-top-navbar {
   --height: 3em;
 }
+
+bronco-side-navbar {
+  position: fixed;
+  --sidebar-width: 20em;
+}
+
+section {
+  padding-top: 50px;
+}
+
+section:last-of-type {
+  margin-bottom: 500px;
+}
+
+@media only screen and (min-width: 928px) {
+  section {
+    width: 100%;
+    padding: 50px 100px;
+  }
+}

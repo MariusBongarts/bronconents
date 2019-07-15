@@ -10,3 +10,9 @@
 [submodule "bronco-top-navbar"]
 	path = bronco-top-navbar
 	url = https://github.com/marius2502/bronco-top-navbar.git
+[submodule "bronco-side-navbar"]
+	path = bronco-side-navbar
+	url = https://github.com/marius2502/bronco-side-navbar.git
+[submodule "bronco-template"]
+	path = bronco-template
+	url = https://github.com/marius2502/bronco-template.git
