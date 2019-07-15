@@ -1,5 +1,4 @@
 import { css, customElement, html, LitElement, property, unsafeCSS, queryAll, query } from 'lit-element';
-import 'weightless';
 
 const componentCSS = require('./left-navbar-overview.component.scss');
 
