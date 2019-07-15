@@ -68,7 +68,5 @@
     "webpack-cli": "^3.3.0",
     "webpack-dev-server": "^3.2.1"
   },
-  "dependencies": {
-    "material-icons": "^0.3.1"
-  }
+  "dependencies": {}
 }

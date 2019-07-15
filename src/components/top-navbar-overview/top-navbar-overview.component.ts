@@ -24,29 +24,30 @@ class AppComponent extends LitElement {
           <span class="comment">&lt!-- Detailed Documentation on <a class="comment" target="_blank" href="https://github.com/marius2502/bronco-top-navbar"
               class="attributeName"><strong>Github</strong></a> --></span>
           <a style="float:right" target="_blank" href="https://codepen.io/marius2502/pen/gNyWWV">
-            <wl-icon target="_blank" href="https://codepen.io/marius2502/pen/gNyWWV">launch</wl-icon>
+            <i class="material-icons" target="_blank" href="https://codepen.io/marius2502/pen/gNyWWV">launch</i>
+
           </a>
           <br>
           <br>
           <span class="tag">&ltbronco-top-navbar
-          <span class="attribute">hideOnTop=<span class="attributeName">"false"<span class="tag">></span>
-            ></span>
-          <span class="tag">&lt/bronco-top-navbar></span>
-          <br>
-          <br>
-          <!-- Styling -->
-          <span class="tag">&ltstyle></span>
-          <br>
-          <span style="color:white">
-            <br>
-            <span class="tag">bronco-top-navbar<span style="color:white"> {</span></span>
-            <br>
-            <span class="attribute">--position: <span class="attributeName">relative;</span></span>
-            <br>
-            <span style="color:white">}</span>
-            <br>
-            <br>
-            <span class="tag">&lt/style></span>
+            <span class="attribute">hideOnTop=<span class="attributeName">"false"<span class="tag">></span>
+                ></span>
+              <span class="tag">&lt/bronco-top-navbar></span>
+              <br>
+              <br>
+              <!-- Styling -->
+              <span class="tag">&ltstyle></span>
+              <br>
+              <span style="color:white">
+                <br>
+                <span class="tag">bronco-top-navbar<span style="color:white"> {</span></span>
+                <br>
+                <span class="attribute">--position: <span class="attributeName">relative;</span></span>
+                <br>
+                <span style="color:white">}</span>
+                <br>
+                <br>
+                <span class="tag">&lt/style></span>
         </div>
       </div>
 `;

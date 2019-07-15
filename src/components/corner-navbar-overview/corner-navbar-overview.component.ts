@@ -20,7 +20,7 @@ class AppComponent extends LitElement {
           <span class="comment">&lt!-- Detailed Documentation on <a class="comment" target="_blank" href="https://github.com/marius2502/bronco-corner-navbar"
               class="attributeName"><strong>Github</strong></a> --></span>
           <a style="float:right" target="_blank" href="https://codepen.io/marius2502/pen/LKaMWL">
-            <wl-icon target="_blank" href="https://codepen.io/marius2502/pen/LKaMWL">launch</wl-icon>
+          <i class="material-icons" target="_blank" href="https://codepen.io/marius2502/pen/LKaMWL">launch</i>
           </a>
           <br>
           <br>
@@ -55,7 +55,7 @@ class AppComponent extends LitElement {
           <span class="comment">&lt!-- Detailed Documentation on <a class="comment" target="_blank" href="https://github.com/marius2502/bronco-corner-navbar"
               class="attributeName"><strong>Github</strong></a> --></span>
           <a style="float:right" target="_blank" href="https://codepen.io/marius2502/pen/pXYwYB">
-            <wl-icon target="_blank" href="https://codepen.io/marius2502/pen/pXYwYB">launch</wl-icon>
+            <i class="material-icons" target="_blank" href="https://codepen.io/marius2502/pen/pXYwYB">launch</i>
           </a>
           <br>
           <br>
