@@ -1,5 +1,5 @@
 import { css, customElement, html, LitElement, property, unsafeCSS, queryAll, query } from 'lit-element';
-import 'weightless/icon';
+import 'weightless';
 
 const componentCSS = require('./button-overview.component.scss');
 
@@ -21,7 +21,7 @@ class AppComponent extends LitElement {
           <span class="comment">&lt!-- Detailed Documentation on <a class="comment" target="_blank" href="https://github.com/marius2502/bronco-button"
               class="attributeName"><strong>Github</strong></a> --></span>
           <a style="float:right" target="_blank" href="https://codepen.io/marius2502/pen/pXYRXX">
-            <wl-icon target="_blank" href="https://codepen.io/marius2502/pen/pXYRXX">launch</wl-icon>
+            <i class="material-icons" target="_blank" href="https://codepen.io/marius2502/pen/pXYRXX">launch</i>
           </a>
           <br>
           <br>

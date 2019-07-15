@@ -3,3 +3,11 @@ body {
   margin: 0;
   font-family: Consolas, "Courier New", monospace; }
 
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(assets/96c476804d7a788cc1c05351b287ee41.eot);
+  /* For IE6-8 */
+  src: local("Material Icons"), local("MaterialIcons-Regular"), url(assets/0509ab09c1b0d2200a4135803c91d6ce.woff2) format("woff2"), url(assets/29b882f018fa6fe75fd338aaae6235b8.woff) format("woff"), url(assets/d120c85b6eb0549d60483e2980033c15.ttf) format("truetype"); }
+

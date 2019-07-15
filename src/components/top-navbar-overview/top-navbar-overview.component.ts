@@ -1,5 +1,5 @@
 import { css, customElement, html, LitElement, property, unsafeCSS, queryAll, query } from 'lit-element';
-import 'weightless/icon';
+import 'weightless';
 
 const componentCSS = require('./top-navbar-overview.component.scss');
 
