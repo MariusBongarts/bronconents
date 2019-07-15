@@ -1,19 +1,15 @@
 @import "../variables.scss";
 @import "../customBootstrap.scss";
 
-bronco-left-navbar {
-  --position: fixed;
-  --margin-top: 10vh;
-  --item-width: 180px;
-}
 
 bronco-top-navbar {
   --height: 3em;
+  --position: relative;
 }
 
 bronco-side-navbar {
   position: fixed;
-  --sidebar-width: 20em;
+  --sidebar-width: 15em;
 }
 
 section {
@@ -26,7 +22,7 @@ section:last-of-type {
 
 @media only screen and (min-width: 928px) {
   section {
-    width: 100%;
+    max-width: 100%;
     padding: 50px 100px;
   }
 }
