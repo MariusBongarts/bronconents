@@ -1,13 +1,14 @@
 @import "../../customBootstrap.scss";
 @import "../../codeStyle.scss";
 @import "../../icons.scss";
+@import "../../customGrid.scss";
 
 
 
 bronco-corner-navbar {
   --position: absolute;
-  --right: 0;
-  --top: 10px;
+  --right: 20px;
+  --top: 30px;
 }
 
 .green {

@@ -1391,18 +1391,21 @@
  * @event selected - Dispatches a CustomEvent when nav item is selected. Selected item is stored in detail of Custom event
  * @cssprop --bg-color - Background color
  * @cssprop --bg-color-hover - Background color when hovered
+ * @cssprop --bg-color-item - Background color of nav item
  * @cssprop --color - text color
  * @cssprop --color-hover - text color when hovered
  * @cssprop --color-selected - text color when item is selected
  * @cssprop --item-width - Width of nav items
  * @cssprop --item-height - Height of nav items
  * @cssprop --margin-top - Margin to the top
- * @cssprop --min-width - Width of button
+ * @cssprop --padding-top - Defines where navItems should begin
  * @cssprop --position - Possible change position attribute
  * @cssprop --primary-color - Change primary color easily
  * @cssprop --rotation-3d - Customize the rotation of the rotation effect by changing degree (Default: 10deg)
  * @cssprop --shadow-x - Shadow-x of button
  * @cssprop --shadow-y - Shadow-y of button
+ * @cssprop --sidebar-width - Width of sidebar
+ * @cssprop --sidebar-min-height - Height of sidebar
  * @cssprop --z-index - Default: 1
  */
 
@@ -1411,18 +1414,21 @@
      * @event selected - Dispatches a CustomEvent when nav item is selected. Selected item is stored in detail of Custom event
      * @cssprop --bg-color - Background color
      * @cssprop --bg-color-hover - Background color when hovered
+     * @cssprop --bg-color-item - Background color of nav item
      * @cssprop --color - text color
      * @cssprop --color-hover - text color when hovered
      * @cssprop --color-selected - text color when item is selected
      * @cssprop --item-width - Width of nav items
      * @cssprop --item-height - Height of nav items
      * @cssprop --margin-top - Margin to the top
-     * @cssprop --min-width - Width of button
+     * @cssprop --padding-top - Defines where navItems should begin
      * @cssprop --position - Possible change position attribute
      * @cssprop --primary-color - Change primary color easily
      * @cssprop --rotation-3d - Customize the rotation of the rotation effect by changing degree (Default: 10deg)
      * @cssprop --shadow-x - Shadow-x of button
      * @cssprop --shadow-y - Shadow-y of button
+     * @cssprop --sidebar-width - Width of sidebar
+     * @cssprop --sidebar-min-height - Height of sidebar
      * @cssprop --z-index - Default: 1
      */
 
@@ -1575,6 +1581,7 @@
  * @event selected - Dispatches a CustomEvent when nav item is selected. Selected item is stored in detail of Custom event
  * @cssprop --bg-color - Background color of item, when not hovered or selected
  * @cssprop --color - text color
+ * @cssprop --color-hover - text color of item when hovered
  * @cssprop --height - Navbar height
  * @cssprop --position - Positioning of navBar. Default: fixed
  * @cssprop --primary-color - Change primary color easily
@@ -1587,6 +1594,7 @@
      * @event selected - Dispatches a CustomEvent when nav item is selected. Selected item is stored in detail of Custom event
      * @cssprop --bg-color - Background color of item, when not hovered or selected
      * @cssprop --color - text color
+     * @cssprop --color-hover - text color of item when hovered
      * @cssprop --height - Navbar height
      * @cssprop --position - Positioning of navBar. Default: fixed
      * @cssprop --primary-color - Change primary color easily

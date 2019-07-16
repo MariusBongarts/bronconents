@@ -1,9 +1,14 @@
 @import "../../customBootstrap.scss";
 @import "../../codeStyle.scss";
 @import "../../icons.scss";
+@import "../../customGrid.scss";
 
 
 bronco-top-navbar {
   --position: relative;
   --width: 100%;
+}
+
+.col {
+  width: 100%;
 }

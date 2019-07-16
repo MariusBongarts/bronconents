@@ -2,12 +2,15 @@
 // Loads fonts for icons
 // $material-icons-font-path: '~material-icons/iconfont/';
 // @import '~material-icons/iconfont/material-icons.scss';
+html {
+  padding: 0;
+  margin: 0;
+}
 
 body {
   padding: 0;
   margin: 0;
-  width: 100vw;
-  overflow-x: hidden;
+  // overflow-x: hidden;
   font-family: Consolas, "Courier New", monospace;
 }
 

@@ -62,7 +62,7 @@ export class AppRoot extends LitElement {
       </div>
 
       <div slot="nav">
-        <bronco-side-navbar .navItems=${this.navItems} selectedItem=${this.selectedItem} @selected=${(e: CustomEvent) =>
+        <bronco-side-navbar .hideOnMobile=${false} .navItems=${this.navItems} selectedItem=${this.selectedItem} @selected=${(e: CustomEvent) =>
               this.scrollToSection(e.detail)}>
         </bronco-side-navbar>
       </div>

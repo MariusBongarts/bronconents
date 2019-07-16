@@ -9,14 +9,12 @@ class AppComponent extends LitElement {
 
   render() {
     return html`
-      <!-- bronco-left-navbar -->
-      <div class="row my-2 m-0 p-0 mt-5">
-        <div class="col-12">
-          <h5>bronco-left-navbar</h5>
-        </div>
-        <!-- First -->
-        <div class="col-12 col-lg-6 componentInfo">
-          <span class="comment">&lt!-- Detailed Documentation on <a class="comment" target="_blank" href="https://github.com/marius2502/bronco-left-navbar"
+  <div class="container shadow">
+    <h2>bronco-left-navbar</h2>
+    <div class="row">
+      <div class="col">
+        <div class="componentInfo">
+        <span class="comment">&lt!-- Detailed Documentation on <a class="comment" target="_blank" href="https://github.com/marius2502/bronco-left-navbar"
               class="attributeName"><strong>Github</strong></a> --></span>
           <a style="float:right" target="_blank" href="https://codepen.io/marius2502/pen/pXYwYB">
             <i class="material-icons" target="_blank" href="https://codepen.io/marius2502/pen/pXYwYB">launch</i>
@@ -41,17 +39,16 @@ class AppComponent extends LitElement {
             <br>
             <span class="tag">&lt/style></span>
         </div>
-        <div class="col-12 col-lg-6">
-          <div class="row d-flex justify-content-center">
-            <bronco-left-navbar></bronco-left-navbar>
-          </div>
-        </div>
       </div>
+      <div class="col justify-content-center align-center">
+      <bronco-left-navbar></bronco-left-navbar>
+      </div>
+    </div>
 
-      <!-- bronco-left-navbar customized -->
-      <div class="row my-2 m-0 p-0 mt-5">
-        <div class="col-12 col-lg-6 componentInfo">
-          <span class="comment">&lt!-- Detailed Documentation on <a class="comment" target="_blank" href="https://github.com/marius2502/bronco-left-navbar"
+    <div class="row">
+      <div class="col">
+        <div class="componentInfo">
+        <span class="comment">&lt!-- Detailed Documentation on <a class="comment" target="_blank" href="https://github.com/marius2502/bronco-left-navbar"
               class="attributeName"><strong>Github</strong></a> --></span>
           <a style="float:right" target="_blank" href="https://codepen.io/marius2502/pen/pXYwYB">
             <i class="material-icons" target="_blank" href="https://codepen.io/marius2502/pen/pXYwYB">launch</i>
@@ -79,12 +76,12 @@ class AppComponent extends LitElement {
               <br>
               <span class="tag">&lt/style></span>
         </div>
-        <div class="col-12 col-lg-6">
-          <div class="row d-flex justify-content-center">
-            <bronco-left-navbar effect3d=${false} class="green"></bronco-left-navbar>
-          </div>
-        </div>
       </div>
+      <div class="col justify-content-center align-center">
+      <bronco-left-navbar effect3d=${false} class="green"></bronco-left-navbar>
+      </div>
+    </div>
+  </div>
 `;
   }
 

@@ -1,10 +1,14 @@
 @import "../../customBootstrap.scss";
 @import "../../codeStyle.scss";
 @import "../../icons.scss";
+@import "../../customGrid.scss";
 
 
 bronco-left-navbar {
   --position: relative;
+  --sidebar-min-height: 400px;
+  --bg-color: white;
+
 }
 
 .green {
