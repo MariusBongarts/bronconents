@@ -14,7 +14,7 @@ class AppComponent extends LitElement {
     <div class="row">
       <div class="col">
         <div class="componentInfo">
-        <span class="comment">&lt!-- Detailed Documentation on <a class="comment" target="_blank" href="https://github.com/marius2502/bronco-top-navbar"
+          <span class="comment">&lt!-- Detailed Documentation on <a class="comment" target="_blank" href="https://github.com/marius2502/bronco-top-navbar"
               class="attributeName"><strong>Github</strong></a> --></span>
           <a style="float:right" target="_blank" href="https://codepen.io/marius2502/pen/gNyWWV">
             <i class="material-icons" target="_blank" href="https://codepen.io/marius2502/pen/gNyWWV">launch</i>
@@ -43,8 +43,10 @@ class AppComponent extends LitElement {
                 <span class="tag">&lt/style></span>
         </div>
       </div>
-      <div class="col justify-content-center align-center">
-      <bronco-top-navbar></bronco-top-navbar>
+      <div class="col">
+        <div style="width: 100%; height: 300px">
+          <bronco-top-navbar></bronco-top-navbar>
+        </div>
       </div>
     </div>
 `;

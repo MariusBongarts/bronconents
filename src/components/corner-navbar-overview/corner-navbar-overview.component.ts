@@ -42,7 +42,9 @@ class AppComponent extends LitElement {
           </div>
         </div>
         <div class="col justify-content-center align-center">
-          <bronco-corner-navbar></bronco-corner-navbar>
+        <div style="width: 100%; height: 300px">
+            <bronco-corner-navbar></bronco-corner-navbar>
+          </div>
         </div>
       </div>
 
@@ -76,7 +78,9 @@ class AppComponent extends LitElement {
           </div>
         </div>
         <div class="col justify-content-center align-center">
-          <bronco-corner-navbar></bronco-corner-navbar>
+          <div style="width: 100%; height: 300px">
+            <bronco-corner-navbar></bronco-corner-navbar>
+          </div>
         </div>
       </div>
 
