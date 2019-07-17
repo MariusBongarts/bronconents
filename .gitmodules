@@ -16,3 +16,6 @@
 [submodule "bronco-template"]
 	path = bronco-template
 	url = https://github.com/marius2502/bronco-template.git
+[submodule "bronco-searchbar"]
+	path = bronco-searchbar
+	url = https://github.com/marius2502/bronco-searchbar.git
