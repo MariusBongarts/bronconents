@@ -1,3 +1,4 @@
+@import './variables.scss';
 
 .componentInfo {
   background-color: #1d1d1d;
@@ -36,6 +37,10 @@
 
 a {
   cursor: pointer;
+}
+
+.material-icons {
+  color: var(--primary-color);
 }
 
 

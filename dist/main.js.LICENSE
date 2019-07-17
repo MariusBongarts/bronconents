@@ -123,6 +123,8 @@
 
 /* 25 */
 
+/* 26 */
+
 // EXTERNAL MODULE: ./src/index.scss
 
 // CONCATENATED MODULE: ./node_modules/lit-html/lib/directive.js
@@ -1723,6 +1725,21 @@
          * @type {string}
          * @memberof BroncoSideNavbar
          */
+
+// CONCATENATED MODULE: ./bronco-template/src/helper/swipeDetector.ts
+
+/**
+ * This class can be subscribed to detect swipes on mobile devices
+ *
+ * @author Marius Bongarts
+ *
+ * @method subscribe This method can be subscribed to be notified of touch events
+ *
+ * @export
+ * @class SwipeDetector
+ */
+
+// Detects swipeRight and left due to x and y client position
 
 // CONCATENATED MODULE: ./bronco-template/node_modules/lit-html/lib/directive.js
 
