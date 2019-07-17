@@ -22,8 +22,26 @@ class AppComponent extends LitElement {
           <br>
           <br>
           <span class="tag">&ltbronco-top-navbar
-            <span class="attribute">hideOnTop=<span class="attributeName">"false"<span class="tag">></span>
-                ></span>
+            <span class="attribute">hideOnTop=<span class="attributeName">"false"<span class="tag">>
+                  <span class="tag">
+                    <br>
+                    <br>
+                    &lth5<span class="attribute"> slot=<span class="attributeName">"left"</span></span>><span style="color:white">
+                      Left slot
+                    </span></span>
+                  <span class="tag">&lt/h5></span>
+                </span>
+                <br>
+                <span class="tag">
+                  <br>
+                  &ltimg
+                  <span class="attribute"> slot=<span class="attributeName">"right"</span>
+                  <span class="attribute"> src=<span class="attributeName">"https://thispersondoesnotexist.com/image"</span>
+                  </span>><span style="color:white">
+                  <br>
+                  </span></span>
+                <br>
+              </span>
               <span class="tag">&lt/bronco-top-navbar></span>
               <br>
               <br>
@@ -40,11 +58,16 @@ class AppComponent extends LitElement {
                 <br>
                 <br>
                 <span class="tag">&lt/style></span>
+              </span>
+            </span>
         </div>
       </div>
       <div class="col justify-content-center align-center my-5">
         <div style="width: 100%; height: 100px">
-          <bronco-top-navbar></bronco-top-navbar>
+          <bronco-top-navbar>
+            <h5 slot="left">Left slot</h5>
+            <img slot="right" src="https://thispersondoesnotexist.com/image"></h5>
+          </bronco-top-navbar>
         </div>
       </div>
     </div>
