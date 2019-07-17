@@ -12,8 +12,8 @@ class AppComponent extends LitElement {
     return html`
     <div class="container shadow">
       <h2>bronco-corner-navbar</h2>
-      <div class="row">
-        <div class="col">
+      <div class="row my-5">
+        <div class="col justify-content-center align-center">
           <div class="componentInfo">
             <span class="comment">&lt!-- Detailed Documentation on <a class="comment" target="_blank" href="https://github.com/marius2502/bronco-corner-navbar"
                 class="attributeName"><strong>Github</strong></a> --></span>
@@ -49,7 +49,7 @@ class AppComponent extends LitElement {
       </div>
 
       <div class="row">
-        <div class="col">
+        <div class="col justify-content-center align-center">
           <div class="componentInfo">
             <span class="comment">&lt!-- Detailed Documentation on <a class="comment" target="_blank" href="https://github.com/marius2502/bronco-corner-navbar"
                 class="attributeName"><strong>Github</strong></a> --></span>

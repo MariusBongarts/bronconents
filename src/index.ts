@@ -3,8 +3,10 @@ import './components/app.component.ts';
 
 // Overviews
 import './components/button-overview/button-overview.component';
-import './components/left-navbar-overview/left-navbar-overview.component';
 import './components/corner-navbar-overview/corner-navbar-overview.component';
+import './components/left-navbar-overview/left-navbar-overview.component';
+import './components/side-navbar-overview/side-navbar-overview.component';
+import './components/searchbar-overview/searchbar-overview.component';
 import './components/top-navbar-overview/top-navbar-overview.component';
 
 // Externe components

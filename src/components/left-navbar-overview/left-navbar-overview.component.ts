@@ -11,8 +11,8 @@ class AppComponent extends LitElement {
     return html`
   <div class="container shadow">
     <h2>bronco-left-navbar</h2>
-    <div class="row">
-      <div class="col">
+    <div class="row my-5">
+      <div class="col justify-content-center align-center">
         <div class="componentInfo">
         <span class="comment">&lt!-- Detailed Documentation on <a class="comment" target="_blank" href="https://github.com/marius2502/bronco-left-navbar"
               class="attributeName"><strong>Github</strong></a> --></span>
@@ -40,13 +40,13 @@ class AppComponent extends LitElement {
             <span class="tag">&lt/style></span>
         </div>
       </div>
-      <div class="col justify-content-center align-center">
+      <div class="col justify-content-center align-center my-5">
       <bronco-left-navbar></bronco-left-navbar>
       </div>
     </div>
 
-    <div class="row">
-      <div class="col">
+    <div class="row my-5">
+      <div class="col justify-content-center align-center">
         <div class="componentInfo">
         <span class="comment">&lt!-- Detailed Documentation on <a class="comment" target="_blank" href="https://github.com/marius2502/bronco-left-navbar"
               class="attributeName"><strong>Github</strong></a> --></span>
@@ -77,7 +77,7 @@ class AppComponent extends LitElement {
               <span class="tag">&lt/style></span>
         </div>
       </div>
-      <div class="col justify-content-center align-center">
+      <div class="col justify-content-center align-center my-5">
       <bronco-left-navbar effect3d=${false} class="green"></bronco-left-navbar>
       </div>
     </div>

@@ -15,7 +15,7 @@ export class AppRoot extends LitElement {
   static styles = css`${unsafeCSS(componentCSS)}`;
 
   @property()
-  navItems = ['bronco-button', 'bronco-corner-navbar', 'bronco-left-navbar', 'bronco-top-navbar'];
+  navItems = ['bronco-button', 'bronco-corner-navbar', 'bronco-left-navbar', 'bronco-searchbar', 'bronco-side-navbar', 'bronco-top-navbar'];
 
   @property()
   selectedItem: string | any;
@@ -81,6 +81,14 @@ export class AppRoot extends LitElement {
 
         <section id='bronco-left-navbar'>
           <left-navbar-overview></left-navbar-overview>
+        </section>
+
+        <section id='bronco-searchbar'>
+          <searchbar-overview></searchbar-overview>
+        </section>
+
+        <section id='bronco-side-navbar'>
+          <side-navbar-overview></side-navbar-overview>
         </section>
 
         <section id='bronco-top-navbar'>

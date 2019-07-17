@@ -12,7 +12,7 @@ class AppComponent extends LitElement {
   <div class="container shadow">
     <h2>bronco-top-navbar</h2>
     <div class="row">
-      <div class="col">
+      <div class="col justify-content-center align-center">
         <div class="componentInfo">
           <span class="comment">&lt!-- Detailed Documentation on <a class="comment" target="_blank" href="https://github.com/marius2502/bronco-top-navbar"
               class="attributeName"><strong>Github</strong></a> --></span>
@@ -43,8 +43,8 @@ class AppComponent extends LitElement {
                 <span class="tag">&lt/style></span>
         </div>
       </div>
-      <div class="col">
-        <div style="width: 100%; height: 300px">
+      <div class="col justify-content-center align-center my-5">
+        <div style="width: 100%; height: 100px">
           <bronco-top-navbar></bronco-top-navbar>
         </div>
       </div>
