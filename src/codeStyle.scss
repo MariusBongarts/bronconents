@@ -49,14 +49,15 @@ a {
   color: black;
 }
 
-a {
+h2 a {
   position: relative;
   display: inline-block;
   margin-top: 20px;
   font-size: 0.5em;
   text-align: center;
 }
-a[title]:hover:after {
+
+h2 a[title]:hover:after {
   content: attr(title);
   position: absolute;
   top: -90%;

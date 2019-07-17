@@ -54,7 +54,7 @@ export class AppRoot extends LitElement {
     return html`
     <bronco-template>
       <div slot="header">
-        <bronco-top-navbar hideOnNotTop="true">
+        <bronco-top-navbar .searchArray=${this.navItems} hideOnNotTop="true">
           <img src="${logoSvg}" slot="left">
           <a slot="right" href="https://github.com/marius2502/bronconents" target="_blank"><svg class="octicon octicon-mark-github v-align-middle"
               height="100%" viewBox="0 0 16 16" version="1.1" width="32" aria-hidden="true">
