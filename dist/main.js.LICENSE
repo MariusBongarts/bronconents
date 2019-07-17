@@ -125,6 +125,18 @@
 
 /* 26 */
 
+/* 27 */
+
+/* 28 */
+
+/* 29 */
+
+/* 30 */
+
+/* 31 */
+
+/* 32 */
+
 // EXTERNAL MODULE: ./src/index.scss
 
 // CONCATENATED MODULE: ./node_modules/lit-html/lib/directive.js
@@ -1230,9 +1242,13 @@
 
 // CONCATENATED MODULE: ./src/components/button-overview/button-overview.component.ts
 
+// CONCATENATED MODULE: ./src/components/corner-navbar-overview/corner-navbar-overview.component.ts
+
 // CONCATENATED MODULE: ./src/components/left-navbar-overview/left-navbar-overview.component.ts
 
-// CONCATENATED MODULE: ./src/components/corner-navbar-overview/corner-navbar-overview.component.ts
+// CONCATENATED MODULE: ./src/components/side-navbar-overview/side-navbar-overview.component.ts
+
+// CONCATENATED MODULE: ./src/components/searchbar-overview/searchbar-overview.component.ts
 
 // CONCATENATED MODULE: ./src/components/top-navbar-overview/top-navbar-overview.component.ts
 
@@ -1654,6 +1670,14 @@
 
 // Closes Top navbar when clicking outside of navbar
 
+// CONCATENATED MODULE: ./bronco-searchbar/src/components/app.component.ts
+
+/**
+ * Searchbar with suggestions
+ * @event selected - Dispatches a CustomEvent when nav item is selected. Selected item is stored in detail of Custom event
+ * @cssprop --bg-color - Background color of navitem
+ */
+
 // CONCATENATED MODULE: ./bronco-side-navbar/node_modules/lit-html/lib/directive.js
 
 // CONCATENATED MODULE: ./bronco-side-navbar/node_modules/lit-html/lib/template-instance.js
@@ -1687,7 +1711,7 @@
  * @cssprop --bg-color-hover - Hover background color of navItem
  * @cssprop --bg-color-icon-hover - Hover color of icon
  * @cssprop --color - Font color
- * @cssprop --padding-top - Defines where navItems should begin
+ * @cssprop --padding-y - Defines padding-y
  * @cssprop --position - Position of ul
  * @cssprop --primary-color - Change primary color easily
  * @cssprop --sidebar-min-height - Sidebar min height. Default: inherit
@@ -1701,7 +1725,7 @@
      * @cssprop --bg-color-hover - Hover background color of navItem
      * @cssprop --bg-color-icon-hover - Hover color of icon
      * @cssprop --color - Font color
-     * @cssprop --padding-top - Defines where navItems should begin
+     * @cssprop --padding-y - Defines padding-y
      * @cssprop --position - Position of ul
      * @cssprop --primary-color - Change primary color easily
      * @cssprop --sidebar-min-height - Sidebar min height. Default: inherit

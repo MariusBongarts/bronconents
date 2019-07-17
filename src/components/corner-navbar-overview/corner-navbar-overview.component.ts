@@ -11,7 +11,7 @@ class AppComponent extends LitElement {
   render() {
     return html`
     <div class="container shadow">
-      <h2>bronco-corner-navbar <a style="float:right" target="_blank" href="https://codepen.io/marius2502/pen/LKaMWL">
+      <h2>bronco-corner-navbar <a style="float:right" target="_blank" title="Live demo" href="https://codepen.io/marius2502/pen/LKaMWL">
           <i class="material-icons" target="_blank" href="https://codepen.io/marius2502/pen/LKaMWL">launch</i>
         </a></h2>
       <div class="row my-5">

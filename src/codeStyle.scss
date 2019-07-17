@@ -49,4 +49,17 @@ a {
   color: black;
 }
 
-
+a {
+  position: relative;
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 0.5em;
+  text-align: center;
+}
+a[title]:hover:after {
+  content: attr(title);
+  position: absolute;
+  top: -90%;
+  left: -1px;
+  color: var(--primary-color);
+}
