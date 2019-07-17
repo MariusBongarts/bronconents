@@ -10,15 +10,14 @@ class AppComponent extends LitElement {
   render() {
     return html`
   <div class="container shadow">
-    <h2>bronco-button</h2>
+    <h2>bronco-button <a style="float:right" target="_blank" href="https://codepen.io/marius2502/pen/MMzboL">
+        <i class="material-icons" target="_blank" href="https://codepen.io/marius2502/pen/MMzboL">launch</i>
+      </a></h2>
     <div class="row my-5">
       <div class="col justify-content-center align-center">
         <div class="componentInfo">
           <span class="comment">&lt!-- Detailed Documentation on <a class="comment" target="_blank" href="https://github.com/marius2502/bronco-button"
               class="attributeName"><strong>Github</strong></a> --></span>
-          <a style="float:right" target="_blank" href="https://codepen.io/marius2502/pen/pXYRXX">
-            <i class="material-icons" target="_blank" href="https://codepen.io/marius2502/pen/pXYRXX">launch</i>
-          </a>
           <br>
           <br>
           <span class="tag">&ltbronco-button></span>
@@ -54,9 +53,6 @@ class AppComponent extends LitElement {
         <div class="componentInfo">
           <span class="comment">&lt!-- Detailed Documentation on <a class="comment" target="_blank" href="https://github.com/marius2502/bronco-button"
               class="attributeName"><strong>Github</strong></a> --></span>
-          <a style="float:right" target="_blank" href="https://codepen.io/marius2502/pen/MMzboL">
-            <i class="material-icons" target="_blank" href="https://codepen.io/marius2502/pen/MMzboL">launch</i>
-          </a>
           <br>
           <br>
           <span class="tag">&ltbronco-button></span>

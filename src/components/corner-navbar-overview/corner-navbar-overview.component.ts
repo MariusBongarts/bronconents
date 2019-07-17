@@ -11,15 +11,14 @@ class AppComponent extends LitElement {
   render() {
     return html`
     <div class="container shadow">
-      <h2>bronco-corner-navbar</h2>
+      <h2>bronco-corner-navbar <a style="float:right" target="_blank" href="https://codepen.io/marius2502/pen/LKaMWL">
+          <i class="material-icons" target="_blank" href="https://codepen.io/marius2502/pen/LKaMWL">launch</i>
+        </a></h2>
       <div class="row my-5">
         <div class="col justify-content-center align-center">
           <div class="componentInfo">
             <span class="comment">&lt!-- Detailed Documentation on <a class="comment" target="_blank" href="https://github.com/marius2502/bronco-corner-navbar"
                 class="attributeName"><strong>Github</strong></a> --></span>
-            <a style="float:right" target="_blank" href="https://codepen.io/marius2502/pen/LKaMWL">
-              <i class="material-icons" target="_blank" href="https://codepen.io/marius2502/pen/LKaMWL">launch</i>
-            </a>
             <br>
             <br>
             <span class="tag">&ltbronco-corner-navbar></span>
@@ -42,7 +41,7 @@ class AppComponent extends LitElement {
           </div>
         </div>
         <div class="col justify-content-center align-center">
-        <div style="width: 100%; height: 300px">
+          <div style="width: 100%; height: 300px">
             <bronco-corner-navbar></bronco-corner-navbar>
           </div>
         </div>
@@ -53,9 +52,6 @@ class AppComponent extends LitElement {
           <div class="componentInfo">
             <span class="comment">&lt!-- Detailed Documentation on <a class="comment" target="_blank" href="https://github.com/marius2502/bronco-corner-navbar"
                 class="attributeName"><strong>Github</strong></a> --></span>
-            <a style="float:right" target="_blank" href="https://codepen.io/marius2502/pen/LKaMWL">
-              <i class="material-icons" target="_blank" href="https://codepen.io/marius2502/pen/LKaMWL">launch</i>
-            </a>
             <br>
             <br>
             <span class="tag">&ltbronco-corner-navbar></span>

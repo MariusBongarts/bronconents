@@ -10,15 +10,14 @@ class AppComponent extends LitElement {
   render() {
     return html`
   <div class="container shadow">
-    <h2>bronco-left-navbar</h2>
+    <h2>bronco-left-navbar <a style="float:right" target="_blank" href="https://codepen.io/marius2502/pen/pXYwYB">
+        <i class="material-icons" target="_blank" href="https://codepen.io/marius2502/pen/pXYwYB">launch</i>
+      </a></h2>
     <div class="row my-5">
       <div class="col justify-content-center align-center">
         <div class="componentInfo">
-        <span class="comment">&lt!-- Detailed Documentation on <a class="comment" target="_blank" href="https://github.com/marius2502/bronco-left-navbar"
+          <span class="comment">&lt!-- Detailed Documentation on <a class="comment" target="_blank" href="https://github.com/marius2502/bronco-left-navbar"
               class="attributeName"><strong>Github</strong></a> --></span>
-          <a style="float:right" target="_blank" href="https://codepen.io/marius2502/pen/pXYwYB">
-            <i class="material-icons" target="_blank" href="https://codepen.io/marius2502/pen/pXYwYB">launch</i>
-          </a>
           <br>
           <br>
           <span class="tag">&ltbronco-left-navbar></span>
@@ -41,18 +40,15 @@ class AppComponent extends LitElement {
         </div>
       </div>
       <div class="col justify-content-center align-center my-5">
-      <bronco-left-navbar></bronco-left-navbar>
+        <bronco-left-navbar></bronco-left-navbar>
       </div>
     </div>
 
     <div class="row my-5">
       <div class="col justify-content-center align-center">
         <div class="componentInfo">
-        <span class="comment">&lt!-- Detailed Documentation on <a class="comment" target="_blank" href="https://github.com/marius2502/bronco-left-navbar"
+          <span class="comment">&lt!-- Detailed Documentation on <a class="comment" target="_blank" href="https://github.com/marius2502/bronco-left-navbar"
               class="attributeName"><strong>Github</strong></a> --></span>
-          <a style="float:right" target="_blank" href="https://codepen.io/marius2502/pen/pXYwYB">
-            <i class="material-icons" target="_blank" href="https://codepen.io/marius2502/pen/pXYwYB">launch</i>
-          </a>
           <br>
           <br>
           <span class="tag">&ltbronco-left-navbar
@@ -78,7 +74,7 @@ class AppComponent extends LitElement {
         </div>
       </div>
       <div class="col justify-content-center align-center my-5">
-      <bronco-left-navbar effect3d=${false} class="green"></bronco-left-navbar>
+        <bronco-left-navbar effect3d=${false} class="green"></bronco-left-navbar>
       </div>
     </div>
   </div>

@@ -10,15 +10,14 @@ class AppComponent extends LitElement {
   render() {
     return html`
   <div class="container shadow">
-    <h2>bronco-side-navbar</h2>
+    <h2>bronco-side-navbar <a style="float:right" target="_blank" href="https://codepen.io/marius2502/pen/pXYRXX">TODO
+        <i class="material-icons" target="_blank" href="https://codepen.io/marius2502/pen/pXYRXX">launch</i>
+      </a></h2>
     <div class="row">
       <div class="col justify-content-center align-center">
         <div class="componentInfo">
           <span class="comment">&lt!-- Detailed Documentation on <a class="comment" target="_blank" href="https://github.com/marius2502/bronco-side-navbar"
               class="attributeName"><strong>Github</strong></a> --></span>
-          <a style="float:right" target="_blank" href="https://codepen.io/marius2502/pen/pXYRXX">
-            <i class="material-icons" target="_blank" href="https://codepen.io/marius2502/pen/pXYRXX">launch</i>
-          </a>
           <br>
           <br>
           <span class="tag">&ltbronco-side-navbar></span>

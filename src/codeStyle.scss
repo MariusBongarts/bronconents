@@ -40,7 +40,13 @@ a {
 }
 
 .material-icons {
-  color: var(--primary-color);
+  font-size: 30px;
+  color: grey;
+}
+
+.material-icons:hover {
+  font-size: 31px;
+  color: black;
 }
 
 
