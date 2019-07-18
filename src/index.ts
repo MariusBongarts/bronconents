@@ -1,7 +1,8 @@
 import './index.scss';
-import './components/app.component.ts';
+import './app/app.component.ts';
 
-// Overviews
+// Components-page
+import './components/components.page';
 import './components/button-overview/button-overview.component';
 import './components/corner-navbar-overview/corner-navbar-overview.component';
 import './components/left-navbar-overview/left-navbar-overview.component';
@@ -9,6 +10,9 @@ import './components/side-navbar-overview/side-navbar-overview.component';
 import './components/searchbar-overview/searchbar-overview.component';
 import './components/template-overview/template-overview.component';
 import './components/top-navbar-overview/top-navbar-overview.component';
+
+//Landing page
+import './landing-page/landing.page';
 
 // Externe components
 import './../bronco-button/src/components/app.component';

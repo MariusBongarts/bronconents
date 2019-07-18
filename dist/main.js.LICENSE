@@ -71,17 +71,17 @@
 
 /* 1 */
 
-// extracted by mini-css-extract-plugin
-
 /* 2 */
 
 /* 3 */
 
-// Module
+// extracted by mini-css-extract-plugin
 
 /* 4 */
 
 /* 5 */
+
+// Module
 
 /* 6 */
 
@@ -146,6 +146,10 @@
 /* 36 */
 
 /* 37 */
+
+/* 38 */
+
+/* 39 */
 
 // EXTERNAL MODULE: ./src/index.scss
 
@@ -1062,6 +1066,13 @@
  * @ExportDecoratedItems
  */
 
+/**
+ * A property decorator that converts a class property into a getter
+ * that executes a querySelectorAll on the element's renderRoot.
+ *
+ * @ExportDecoratedItems
+ */
+
 // Note, this is a getter so that it's lazy. In practice, this means
 
 // stylesheets are not created until the first element instance is made.
@@ -1223,7 +1234,7 @@
 
 //# sourceMappingURL=lit-element.js.map
 
-// CONCATENATED MODULE: ./src/components/app.component.ts
+// CONCATENATED MODULE: ./src/app/app.component.ts
 
 /**
  * @author Marius Bongarts
@@ -1243,12 +1254,7 @@
 
 //     }
 
-/**
- * A property decorator that converts a class property into a getter
- * that executes a querySelectorAll on the element's renderRoot.
- *
- * @ExportDecoratedItems
- */
+// CONCATENATED MODULE: ./src/components/components.page.ts
 
 // CONCATENATED MODULE: ./src/components/button-overview/button-overview.component.ts
 
@@ -1729,6 +1735,30 @@
 
 // Closes Top navbar when clicking outside of navbar
 
+// CONCATENATED MODULE: ./bronco-searchbar/node_modules/lit-html/lib/directive.js
+
+// CONCATENATED MODULE: ./bronco-searchbar/node_modules/lit-html/lib/template-instance.js
+
+// CONCATENATED MODULE: ./bronco-searchbar/node_modules/lit-html/lib/template-result.js
+
+// CONCATENATED MODULE: ./bronco-searchbar/node_modules/lit-html/lib/parts.js
+
+// CONCATENATED MODULE: ./bronco-searchbar/node_modules/lit-html/lib/default-template-processor.js
+
+// CONCATENATED MODULE: ./bronco-searchbar/node_modules/lit-html/lib/template-factory.js
+
+// CONCATENATED MODULE: ./bronco-searchbar/node_modules/lit-html/lib/render.js
+
+// CONCATENATED MODULE: ./bronco-searchbar/node_modules/lit-html/lit-html.js
+
+// CONCATENATED MODULE: ./bronco-searchbar/node_modules/lit-html/lib/shady-render.js
+
+// CONCATENATED MODULE: ./bronco-searchbar/node_modules/lit-element/lib/updating-element.js
+
+// CONCATENATED MODULE: ./bronco-searchbar/node_modules/lit-element/lib/decorators.js
+
+// CONCATENATED MODULE: ./bronco-searchbar/node_modules/lit-element/lit-element.js
+
 // CONCATENATED MODULE: ./bronco-searchbar/src/components/app.component.ts
 
 /**
@@ -1749,6 +1779,12 @@
          *
          * Index of focused suggestion
          * @type {number}
+         * @memberof BroncoSearchbar
+         */
+
+/**
+         *
+         * Minimum of letters to be typed to show suggestions
          * @memberof BroncoSearchbar
          */
 
@@ -1900,6 +1936,17 @@
      * @cssprop --shadow-nav - Defines shadow of the nav
      *
      */
+
+/**
+         *
+         * Set this to true to hide the nav bar on default
+         * @memberof BroncoTemplate
+         */
+
+/**
+         * Set this to true to hide the left navigation completely
+         * @memberof BroncoTemplate
+         */
 
 /**
          * Boolean if mobile device

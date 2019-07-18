@@ -1,0 +1,34 @@
+@import "../customGrid.scss";
+
+.landingImg {
+  left: 0px;
+  top: 0px;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100vw;
+  height: calc(100vh - 2.5em); // Subtract height of header bar
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 70%;
+}
+
+.header {
+  width: 100%;
+  text-align: center;
+}
+
+.getStarted {
+  opacity: 0.9;
+}
