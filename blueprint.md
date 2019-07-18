@@ -8,7 +8,7 @@ Welcome to {{ pkg.name }}. This is version {{ pkg.version }}!
 
 ## Live demo
 
-See the componets [here](https://bongarts.net).
+See the components [here](https://bongarts.net).
 
 ## Installation
 

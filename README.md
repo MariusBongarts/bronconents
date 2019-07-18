@@ -31,7 +31,7 @@ Welcome to @marius/bronconents. This is version 1.0.0!
 
 ## ➤ Live demo
 
-See the componets [here](https://bongarts.net).
+See the components [here](https://bongarts.net).
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#installation)
@@ -52,12 +52,15 @@ import '@marius/[packagename]/dist/main';
 ## ➤ Elements
 
 
-| Name          | Tag                    | Description                   | Documentation                                    | Demo                          |
-|---------------|------------------------|-------------------------------|--------------------------------------------------|-------------------------------|
-| Button        | `bronco-button`        | Modern button                 | [Documentation](https://github.com/marius2502/bronco-button) | [Demo](https://bongarts.net/) |
-| Corner Navbar | `bronco-corner-navbar` | Modern circular navbar        | [Documentation](https://github.com/marius2502/bronco-corner-navbar) | [Demo](https://bongarts.net/) |
-| Left Navbar   | `bronco-left-navbar`   | Modern left side navbar       | [Documentation](https://github.com/marius2502/bronco-left-navbar) | [Demo](https://bongarts.net/) |
-| Top Navbar    | `bronco-top-navbar`    | Modern and responsive top bar | [Documentation](https://github.com/marius2502/bronco-top-navbar) | [Demo](https://bongarts.net/) |
+| Name          | Tag                    | Description                       | Documentation                                    | Demo                          |
+|---------------|------------------------|-----------------------------------|--------------------------------------------------|-------------------------------|
+| Button        | `bronco-button`        | Modern button                     | [Documentation](https://github.com/marius2502/bronco-button) | [Demo](https://bongarts.net/) |
+| Corner Navbar | `bronco-corner-navbar` | Modern circular navbar            | [Documentation](https://github.com/marius2502/bronco-corner-navbar) | [Demo](https://bongarts.net/) |
+| Icon          | `bronco-icon`          | Ready to use icons                | [Documentation](https://github.com/marius2502/bronco-icon) | [Demo](https://bongarts.net/) |
+| Left Navbar   | `bronco-left-navbar`   | Modern left side navbar           | [Documentation](https://github.com/marius2502/bronco-left-navbar) | [Demo](https://bongarts.net/) |
+| Searchbar     | `bronco-searchbar`     | Modern searchbar with suggestions | [Documentation](https://github.com/marius2502/bronco-searchbar) | [Demo](https://bongarts.net/) |
+| Side Navbar   | `bronco-side-navbar`   | Modern left side navbar           | [Documentation](https://github.com/marius2502/bronco-side-navbar) | [Demo](https://bongarts.net/) |
+| Top Navbar    | `bronco-top-navbar`    | Modern and responsive top bar     | [Documentation](https://github.com/marius2502/bronco-top-navbar) | [Demo](https://bongarts.net/) |
 
 
 

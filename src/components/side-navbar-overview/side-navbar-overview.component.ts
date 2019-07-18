@@ -27,9 +27,10 @@ class AppComponent extends LitElement {
         </div>
       </div>
       <div class="col justify-content-center align-center my-5">
-        <bronco-side-navbar style="--sidebar-min-height: 100%"></bronco-side-navbar>
+        <bronco-side-navbar></bronco-side-navbar>
       </div>
     </div>
+  </div>
 `;
   }
 

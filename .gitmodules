@@ -19,3 +19,6 @@
 [submodule "bronco-searchbar"]
 	path = bronco-searchbar
 	url = https://github.com/marius2502/bronco-searchbar.git
+[submodule "bronco-icon"]
+	path = bronco-icon
+	url = https://github.com/marius2502/bronco-icon.git

@@ -35,12 +35,33 @@
 			"Modern circular navbar",
 			"[Documentation](https://github.com/marius2502/bronco-corner-navbar)",
 			"[Demo](https://bongarts.net/)"
+		],
+		[
+			"Icon",
+			"`bronco-icon`",
+			"Ready to use icons",
+			"[Documentation](https://github.com/marius2502/bronco-icon)",
+			"[Demo](https://bongarts.net/)"
     ],
     [
 			"Left Navbar",
 			"`bronco-left-navbar`",
 			"Modern left side navbar",
 			"[Documentation](https://github.com/marius2502/bronco-left-navbar)",
+			"[Demo](https://bongarts.net/)"
+		],
+		[
+			"Searchbar",
+			"`bronco-searchbar`",
+			"Modern searchbar with suggestions",
+			"[Documentation](https://github.com/marius2502/bronco-searchbar)",
+			"[Demo](https://bongarts.net/)"
+		],
+		[
+			"Side Navbar",
+			"`bronco-side-navbar`",
+			"Modern left side navbar",
+			"[Documentation](https://github.com/marius2502/bronco-side-navbar)",
 			"[Demo](https://bongarts.net/)"
 		],
 		[

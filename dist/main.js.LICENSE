@@ -137,6 +137,16 @@
 
 /* 32 */
 
+/* 33 */
+
+/* 34 */
+
+/* 35 */
+
+/* 36 */
+
+/* 37 */
+
 // EXTERNAL MODULE: ./src/index.scss
 
 // CONCATENATED MODULE: ./node_modules/lit-html/lib/directive.js
@@ -1250,6 +1260,8 @@
 
 // CONCATENATED MODULE: ./src/components/searchbar-overview/searchbar-overview.component.ts
 
+// CONCATENATED MODULE: ./src/components/template-overview/template-overview.component.ts
+
 // CONCATENATED MODULE: ./src/components/top-navbar-overview/top-navbar-overview.component.ts
 
 // CONCATENATED MODULE: ./bronco-button/node_modules/lit-html/lib/directive.js
@@ -1332,6 +1344,53 @@
          * @type {boolean}
          * @memberof BroncoButton
          */
+
+// CONCATENATED MODULE: ./bronco-icon/node_modules/lit-html/lib/directive.js
+
+// CONCATENATED MODULE: ./bronco-icon/node_modules/lit-html/lib/template-instance.js
+
+// CONCATENATED MODULE: ./bronco-icon/node_modules/lit-html/lib/template-result.js
+
+// CONCATENATED MODULE: ./bronco-icon/node_modules/lit-html/lib/parts.js
+
+// CONCATENATED MODULE: ./bronco-icon/node_modules/lit-html/lib/default-template-processor.js
+
+// CONCATENATED MODULE: ./bronco-icon/node_modules/lit-html/lib/template-factory.js
+
+// CONCATENATED MODULE: ./bronco-icon/node_modules/lit-html/lib/render.js
+
+// CONCATENATED MODULE: ./bronco-icon/node_modules/lit-html/lit-html.js
+
+// CONCATENATED MODULE: ./bronco-icon/node_modules/lit-html/lib/shady-render.js
+
+// CONCATENATED MODULE: ./bronco-icon/node_modules/lit-element/lib/updating-element.js
+
+// CONCATENATED MODULE: ./bronco-icon/node_modules/lit-element/lib/decorators.js
+
+// CONCATENATED MODULE: ./bronco-icon/node_modules/lit-element/lit-element.js
+
+// CONCATENATED MODULE: ./bronco-icon/src/components/app.component.ts
+
+/**
+ * This web component easily produces icons
+ * @cssprop --color - Color of the icon
+ * @cssprop --size - Size of the icon
+ */
+
+/**
+     * This web component easily produces icons
+     * @cssprop --color - Color of the icon
+     * @cssprop --size - Size of the icon
+     */
+
+/**
+         *
+         * Commit the name of the preferred icon from here: https://material.io/tools/icons/
+         * @type {string}
+         * @memberof BroncoIcon
+         */
+
+// Has to be done because the new icons are documented with _ online. But in this css class they are splitted by -
 
 // CONCATENATED MODULE: ./bronco-left-navbar/node_modules/lit-html/lib/directive.js
 
@@ -1603,7 +1662,7 @@
  * @cssprop --height - Navbar height
  * @cssprop --position - Positioning of navBar. Default: fixed
  * @cssprop --primary-color - Change primary color easily
- * @cssprop --width - Navbar width. Default: 100vw
+ * @cssprop --width - Navbar width. Default: 100%
  * @cssprop --z-index - Default: 2
  */
 
@@ -1616,7 +1675,7 @@
      * @cssprop --height - Navbar height
      * @cssprop --position - Positioning of navBar. Default: fixed
      * @cssprop --primary-color - Change primary color easily
-     * @cssprop --width - Navbar width. Default: 100vw
+     * @cssprop --width - Navbar width. Default: 100%
      * @cssprop --z-index - Default: 2
      */
 
@@ -1674,17 +1733,24 @@
 
 /**
  * Searchbar with suggestions
- * @event selected - Dispatches a CustomEvent when nav item is selected. Selected item is stored in detail of Custom event
+ * @event selected - Dispatches a CustomEvent when search item is selected. Selected item is stored in detail of Custom event
  * @cssprop --box-width - Set to less than 100% to have an animation on focus
  * @cssprop --bg-color - Background color of navitem
  */
 
 /**
      * Searchbar with suggestions
-     * @event selected - Dispatches a CustomEvent when nav item is selected. Selected item is stored in detail of Custom event
+     * @event selected - Dispatches a CustomEvent when search item is selected. Selected item is stored in detail of Custom event
      * @cssprop --box-width - Set to less than 100% to have an animation on focus
      * @cssprop --bg-color - Background color of navitem
      */
+
+/**
+         *
+         * Index of focused suggestion
+         * @type {number}
+         * @memberof BroncoSearchbar
+         */
 
 /**
          * Commit an array with strings to be searched for
@@ -1692,9 +1758,9 @@
          * @memberof BroncoSearchbar
          */
 
-// TODO: Remove focus from input
+// Clears input field, when clicked outside
 
-// TODO: Clear filtered array on outside click
+// Clears input field, when scrolled
 
 // CONCATENATED MODULE: ./bronco-side-navbar/node_modules/lit-html/lib/directive.js
 
@@ -1728,6 +1794,7 @@
  * @cssprop --bg-color - Background color of navitem
  * @cssprop --bg-color-hover - Hover background color of navItem
  * @cssprop --bg-color-icon-hover - Hover color of icon
+ * @cssprop --box-shadow - Box shadow
  * @cssprop --color - Font color
  * @cssprop --padding-y - Defines padding-y
  * @cssprop --position - Position of ul
@@ -1742,6 +1809,7 @@
      * @cssprop --bg-color - Background color of navitem
      * @cssprop --bg-color-hover - Hover background color of navItem
      * @cssprop --bg-color-icon-hover - Hover color of icon
+     * @cssprop --box-shadow - Box shadow
      * @cssprop --color - Font color
      * @cssprop --padding-y - Defines padding-y
      * @cssprop --position - Position of ul
@@ -1816,6 +1884,9 @@
  * @slot main - Slot to set main content
  * @cssprop --bg - Defines the background
  * @cssprop --nav-width - Defines the width of the left nav bar
+ * @cssprop --shadow-header - Defines shadow of the header
+ * @cssprop --shadow-nav - Defines shadow of the nav
+ *
  */
 
 /**
@@ -1825,6 +1896,9 @@
      * @slot main - Slot to set main content
      * @cssprop --bg - Defines the background
      * @cssprop --nav-width - Defines the width of the left nav bar
+     * @cssprop --shadow-header - Defines shadow of the header
+     * @cssprop --shadow-nav - Defines shadow of the nav
+     *
      */
 
 /**

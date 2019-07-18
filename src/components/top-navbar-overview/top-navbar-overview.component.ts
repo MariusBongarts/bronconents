@@ -30,12 +30,21 @@ class AppComponent extends LitElement {
           <br>
           <span class="tag">&lth5<span class="attribute"> slot=<span class="attributeName">"left"</span></span>>
           </span>
-
           <span style="color:white">
             Left slot
           </span>
           <span class="tag">&lt/h5></span>
 
+
+          <br>
+          <br>
+          <span class="tag">&ltbronco-searchbar<span class="attribute"> slot=<span class="attributeName">"center"</span></span>>
+          </span>
+          <span style="color:white">
+            Left slot
+          </span>
+          <span class="tag">&lt/bronco-searchbar></span>
+          <br>
           <br>
 
           <span class="tag">&ltimg
@@ -73,11 +82,13 @@ class AppComponent extends LitElement {
         <div style="width: 100%; height: 100px">
           <bronco-top-navbar>
             <h5 slot="left">Left slot</h5>
+            <bronco-searchbar slot="center" .searchArray=${['Item1', 'Item2' , 'Item3' ]}></bronco-searchbar>
             <img slot="right" src="https://thispersondoesnotexist.com/image"></h5>
           </bronco-top-navbar>
         </div>
       </div>
     </div>
+  </div>
 `;
   }
 

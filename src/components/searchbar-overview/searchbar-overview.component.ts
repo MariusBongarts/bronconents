@@ -27,9 +27,10 @@ class AppComponent extends LitElement {
         </div>
       </div>
       <div class="col justify-content-center align-center">
-        <bronco-searchbar></bronco-searchbar>
+        <bronco-searchbar .searchArray=${['Item1', 'Item2' , 'Item3' ]}></bronco-searchbar>
       </div>
     </div>
+  </div>
 `;
   }
 

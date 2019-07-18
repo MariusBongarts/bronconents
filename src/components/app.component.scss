@@ -8,8 +8,12 @@ bronco-top-navbar {
 }
 
 bronco-side-navbar {
-  position: fixed;
   --sidebar-width: 15em;
+}
+
+bronco-template {
+  --shadow-header: none;
+  --shadow-nav: none;
 }
 
 section {
