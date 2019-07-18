@@ -6,6 +6,16 @@
   margin: 20px;
   padding: 10px 30px;
   word-wrap: break-word;
+  width: 100%;
+}
+
+// Makes long span words break line (e.g. long src links)
+@media only screen and (max-width: 768px) {
+  .componentInfo > span {
+    display:block;
+    width:200px;
+    word-wrap:break-word;
+  }
 }
 
 

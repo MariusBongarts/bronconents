@@ -22,44 +22,51 @@ class AppComponent extends LitElement {
           <br>
           <br>
           <span class="tag">&ltbronco-top-navbar
-            <span class="attribute">hideOnTop=<span class="attributeName">"false"<span class="tag">>
-                  <span class="tag">
-                    <br>
-                    <br>
-                    &lth5<span class="attribute"> slot=<span class="attributeName">"left"</span></span>><span style="color:white">
-                      Left slot
-                    </span></span>
-                  <span class="tag">&lt/h5></span>
-                </span>
-                <br>
-                <span class="tag">
-                  <br>
-                  &ltimg
-                  <span class="attribute"> slot=<span class="attributeName">"right"</span>
-                  <span class="attribute"> src=<span class="attributeName">"https://thispersondoesnotexist.com/image"</span>
-                  </span>><span style="color:white">
-                  <br>
-                  </span></span>
-                <br>
-              </span>
-              <span class="tag">&lt/bronco-top-navbar></span>
-              <br>
-              <br>
-              <!-- Styling -->
-              <span class="tag">&ltstyle></span>
-              <br>
-              <span style="color:white">
-                <br>
-                <span class="tag">bronco-top-navbar<span style="color:white"> {</span></span>
-                <br>
-                <span class="attribute">--position: <span class="attributeName">relative;</span></span>
-                <br>
-                <span style="color:white">}</span>
-                <br>
-                <br>
-                <span class="tag">&lt/style></span>
-              </span>
+            <span class="attribute">hideOnTop=<span class="attributeName">"false"</span></span>
+          </span>
+          <span class="tag">></span>
+
+          <br>
+          <br>
+          <span class="tag">&lth5<span class="attribute"> slot=<span class="attributeName">"left"</span></span>>
+          </span>
+
+          <span style="color:white">
+            Left slot
+          </span>
+          <span class="tag">&lt/h5></span>
+
+          <br>
+
+          <span class="tag">&ltimg
+            <span class="attribute">
+              slot=<span class="attributeName">"right"</span>
+              src=<span class="attributeName">"https://thispersondoesnotexist.com/image"</span>
             </span>
+            >
+          </span>
+
+
+          <br>
+          <br>
+          <span class="tag">&lt/bronco-top-navbar></span>
+          <br>
+          <br>
+
+          <!-- Styling -->
+          <span class="tag">&ltstyle></span>
+          <br>
+          <span style="color:white">
+            <br>
+            <span class="tag">bronco-top-navbar<span style="color:white"> {</span></span>
+            <br>
+            <span class="attribute">--position: <span class="attributeName">relative;</span></span>
+            <br>
+            <span style="color:white">}</span>
+            <br>
+            <br>
+            <span class="tag">&lt/style></span>
+          </span>
         </div>
       </div>
       <div class="col justify-content-center align-center my-5">

@@ -1675,8 +1675,26 @@
 /**
  * Searchbar with suggestions
  * @event selected - Dispatches a CustomEvent when nav item is selected. Selected item is stored in detail of Custom event
+ * @cssprop --box-width - Set to less than 100% to have an animation on focus
  * @cssprop --bg-color - Background color of navitem
  */
+
+/**
+     * Searchbar with suggestions
+     * @event selected - Dispatches a CustomEvent when nav item is selected. Selected item is stored in detail of Custom event
+     * @cssprop --box-width - Set to less than 100% to have an animation on focus
+     * @cssprop --bg-color - Background color of navitem
+     */
+
+/**
+         * Commit an array with strings to be searched for
+         * @type {string[]}
+         * @memberof BroncoSearchbar
+         */
+
+// TODO: Remove focus from input
+
+// TODO: Clear filtered array on outside click
 
 // CONCATENATED MODULE: ./bronco-side-navbar/node_modules/lit-html/lib/directive.js
 
