@@ -73,15 +73,15 @@
 
 /* 2 */
 
-/* 3 */
-
 // extracted by mini-css-extract-plugin
+
+/* 3 */
 
 /* 4 */
 
-/* 5 */
-
 // Module
+
+/* 5 */
 
 /* 6 */
 
@@ -150,6 +150,12 @@
 /* 38 */
 
 /* 39 */
+
+/* 40 */
+
+/* 41 */
+
+/* 42 */
 
 // EXTERNAL MODULE: ./src/index.scss
 
@@ -1066,13 +1072,6 @@
  * @ExportDecoratedItems
  */
 
-/**
- * A property decorator that converts a class property into a getter
- * that executes a querySelectorAll on the element's renderRoot.
- *
- * @ExportDecoratedItems
- */
-
 // Note, this is a getter so that it's lazy. In practice, this means
 
 // stylesheets are not created until the first element instance is made.
@@ -1234,6 +1233,14 @@
 
 //# sourceMappingURL=lit-element.js.map
 
+// CONCATENATED MODULE: ./src/services/router.ts
+
+// a-Element ermitteln
+
+// nur interne Links
+
+// e. g. 'user/sign-in' (without leading slash)
+
 // CONCATENATED MODULE: ./src/app/app.component.ts
 
 /**
@@ -1246,15 +1253,20 @@
      * Root web component
      */
 
-// If scrolled to bottom
-
-//     if (document.documentElement.offsetHeight - window.innerHeight === 0) {
-
-//       this.selectedItem = this.navItems[this.navItems.length - 1];
-
-//     }
-
 // CONCATENATED MODULE: ./src/components/components.page.ts
+
+// this.sectionElements.forEach(e => {
+
+//   (e.offsetTop - 200) < document.documentElement.scrollTop ? this.selectedItem = e.getAttribute('id') : '';
+
+// });
+
+/**
+ * A property decorator that converts a class property into a getter
+ * that executes a querySelectorAll on the element's renderRoot.
+ *
+ * @ExportDecoratedItems
+ */
 
 // CONCATENATED MODULE: ./src/components/button-overview/button-overview.component.ts
 
@@ -1269,6 +1281,8 @@
 // CONCATENATED MODULE: ./src/components/template-overview/template-overview.component.ts
 
 // CONCATENATED MODULE: ./src/components/top-navbar-overview/top-navbar-overview.component.ts
+
+// CONCATENATED MODULE: ./src/landing-page/landing.page.ts
 
 // CONCATENATED MODULE: ./bronco-button/node_modules/lit-html/lib/directive.js
 
