@@ -43,11 +43,7 @@ export class ComponentsPage extends LitElement {
       route === 'components'.toLowerCase() ? this.scrollToSection(this.selectedItem) : '';
     });
 
-    document.onscroll = () => {
-      this.sectionElements.forEach(e => {
-        (e.offsetTop - 200) < document.documentElement.scrollTop ? this.selectedItem = e.getAttribute('id') : '';
-      });
-    };
+    document.addEventListener('scroll', this.selectOnScroll);
 
     if (router.getPath() === 'components') {
       setTimeout(() => {
@@ -58,7 +54,7 @@ export class ComponentsPage extends LitElement {
 
   // Remove listener when element is removed from dom
   disconnectedCallback() {
-    document.onscroll = () => '';
+    document.removeEventListener('scroll', this.selectOnScroll);
   }
 
   scrollToSection(item: string) {
@@ -75,11 +71,18 @@ export class ComponentsPage extends LitElement {
   } catch (error) {}
   }
 
+  selectOnScroll = () => {
+    this.sectionElements.forEach(e => {
+      (e.offsetTop - 200) < document.documentElement.scrollTop ? this.selectedItem = e.getAttribute('id') : '';
+    });
+
+  }
+
   render() {
     return html`
         <bronco-template .hideNavForever=${false}>
           <div slot="header">
-            <bronco-top-navbar .navItems=${this.navItems} .hideOnNotTop=${false} @selected=${(e: CustomEvent) =>
+            <bronco-top-navbar selectedItem="components" .navItems=${this.navItems} .hideOnNotTop=${false} @selected=${(e: CustomEvent) =>
         this.navItems.find(item => item === e.detail) ? router.navigate(e.detail.toLowerCase()) : ''}>
 
               <img src="${logoSvg}" slot="left" tabindex="0" @click=${()=> router.navigate('home')}>
