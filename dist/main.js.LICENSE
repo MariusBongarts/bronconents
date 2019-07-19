@@ -1255,15 +1255,7 @@
 
 // CONCATENATED MODULE: ./src/components/components.page.ts
 
-// window.addEventListener('scroll', () => {
-
-//   this.sectionElements.forEach(e => {
-
-//     (e.offsetTop - 200) < document.documentElement.scrollTop ? this.selectedItem = e.getAttribute('id') : '';
-
-//   });
-
-// });
+// Remove listener when element is removed from dom
 
 /**
  * A property decorator that converts a class property into a getter

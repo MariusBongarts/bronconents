@@ -5,8 +5,6 @@
   --primary-color: rgb(29, 202, 255);
 }
 
-
-
 bronco-searchbar {
   --bg-color: rgba(255, 255, 255, 0.178);
 }
@@ -55,7 +53,7 @@ bronco-top-navbar.onTop {
   width: 90%;
 }
 
-.imgInstallation {
+.imgInstallation, .imgElements {
   width: 100%;
 }
 
@@ -84,12 +82,19 @@ bronco-top-navbar.onTop {
 .drag {
   background: white;
   border-radius: 50%;
-  bottom: 10%;
   box-shadow: 0px 8px 8px rgba(128, 128, 128, 0.212);
   cursor: pointer;
   height: 50px;
   position: absolute;
   width: 50px;
+}
+
+.drag.down {
+  bottom: 10%;
+}
+
+.drag.up {
+  top: 10%;
 }
 
 .drag bronco-icon {
