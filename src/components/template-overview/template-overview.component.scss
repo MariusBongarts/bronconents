@@ -6,6 +6,12 @@
 img {
   width: 90%;
   height: 90%;
-  margin: 50px;
+  margin: 5%;
   box-shadow: 4px 4px 4px 4px rgba(128, 128, 128, 0.322);
+}
+
+@media only screen and (min-width: 928px) {
+  img {
+    margin: 50px;
+  }
 }

@@ -1255,9 +1255,13 @@
 
 // CONCATENATED MODULE: ./src/components/components.page.ts
 
-// this.sectionElements.forEach(e => {
+// window.addEventListener('scroll', () => {
 
-//   (e.offsetTop - 200) < document.documentElement.scrollTop ? this.selectedItem = e.getAttribute('id') : '';
+//   this.sectionElements.forEach(e => {
+
+//     (e.offsetTop - 200) < document.documentElement.scrollTop ? this.selectedItem = e.getAttribute('id') : '';
+
+//   });
 
 // });
 
@@ -1677,6 +1681,7 @@
  * Modern Top circular navbar built with Lit-Element
  * @event selected - Dispatches a CustomEvent when nav item is selected. Selected item is stored in detail of Custom event
  * @cssprop --bg-color - Background color of item, when not hovered or selected
+ * @cssprop --box-shadow - Shadow of top bar
  * @cssprop --color - text color
  * @cssprop --color-hover - text color of item when hovered
  * @cssprop --height - Navbar height
@@ -1690,6 +1695,7 @@
      * Modern Top circular navbar built with Lit-Element
      * @event selected - Dispatches a CustomEvent when nav item is selected. Selected item is stored in detail of Custom event
      * @cssprop --bg-color - Background color of item, when not hovered or selected
+     * @cssprop --box-shadow - Shadow of top bar
      * @cssprop --color - text color
      * @cssprop --color-hover - text color of item when hovered
      * @cssprop --height - Navbar height
