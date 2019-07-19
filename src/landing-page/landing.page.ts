@@ -33,13 +33,13 @@ export class LandingPage extends LitElement {
   render() {
     return html`
       <bronco-top-navbar class="${this.scrolledTop ? 'onTop' : ''}" .navItems=${this.navItems} .hideOnNotTop=${false}
-        @selected=${(e: CustomEvent) =>
+        @selected=${(e: CustomEvent)=>
         this.navItems.find(item => item === e.detail) ? router.navigate(e.detail.toLowerCase()) : ''}>
 
-        <img src="${logoSvg}" slot="left" tabindex="0" @click=${()=> router.navigate('home')}>
+        <img src="${logoSvg}" slot="left" tabindex="0" @click=${() => router.navigate('home')}>
 
-        <bronco-searchbar .searchArray=${this.searchArray} @selected=${(e: CustomEvent) =>
-        router.navigate('components?component=' + e.detail)} slot="center"></bronco-searchbar>
+        <bronco-searchbar .searchArray=${this.searchArray} @selected=${(e: CustomEvent)=>
+          router.navigate('components?component=' + e.detail)} slot="center"></bronco-searchbar>
 
 
         <a slot="right" href="https://github.com/marius2502/bronconents" target="_blank"><svg class="octicon octicon-mark-github v-align-middle"
@@ -56,19 +56,23 @@ export class LandingPage extends LitElement {
         <div class="center">
 
           <div class="header">
-            <img class="logo" src="${logoSvg}" slot="left" tabindex="0" @click=${()=> router.navigate('home')}>
+            <img class="logo" src="${logoSvg}" slot="left" tabindex="0" @click=${() => router.navigate('home')}>
           </div>
 
-          <bronco-button outlineEffect @click=${()=> router.navigate('GetStarted')}>Get started</bronco-button>
+          <bronco-button outlineEffect @click=${() => router.navigate('GetStarted')}>Get started</bronco-button>
           <hr class="divider">
-          <bronco-button outline outlineEffect @click=${()=> router.navigate('components')}>See Elements</bronco-button>
+          <bronco-button outline outlineEffect @click=${() => router.navigate('components')}>See Elements</bronco-button>
+          <div class="drag">
+            <bronco-icon class="material-icons" iconName='keyboard_arrow_down'></bronco-icon>
+          </div>
         </div>
       </div>
 
       <div class="landingContainer">
         <div class="center">
           <div>
-            <img class="imgInstallation" src="${imgInstallation}" slot="left" tabindex="0" @click=${()=> router.navigate('home')}>
+            <img class="imgInstallation" src="${imgInstallation}" slot="left" tabindex="0" @click=${() =>
+            router.navigate('home')}>
           </div>
         </div>
       </div>
