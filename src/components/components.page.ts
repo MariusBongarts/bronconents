@@ -29,6 +29,8 @@ export class ComponentsPage extends LitElement {
   @queryAll('section')
   sectionElements!: HTMLElement[];
 
+  scrollListener: any;
+
   firstUpdated() {
     let param = router.getParams();
 
@@ -41,21 +43,26 @@ export class ComponentsPage extends LitElement {
       route === 'components'.toLowerCase() ? this.scrollToSection(this.selectedItem) : '';
     });
 
-    // window.addEventListener('scroll', () => {
-    //   this.sectionElements.forEach(e => {
-    //     (e.offsetTop - 200) < document.documentElement.scrollTop ? this.selectedItem = e.getAttribute('id') : '';
-    //   });
-    // });
+    document.onscroll = () => {
+      this.sectionElements.forEach(e => {
+        (e.offsetTop - 200) < document.documentElement.scrollTop ? this.selectedItem = e.getAttribute('id') : '';
+      });
+    };
 
     if (router.getPath() === 'components') {
       setTimeout(() => {
         router.getPath() === 'components' ? this.scrollToSection(this.selectedItem) : '';
-      }, 100);
+      }, 50);
     }
   }
 
+  // Remove listener when element is removed from dom
+  disconnectedCallback() {
+    document.onscroll = () => '';
+  }
+
   scrollToSection(item: string) {
-    console.log(item);
+    try {
     let sectionElement!: HTMLElement;
     this.sectionElements.forEach(e => {
       if (e.getAttribute('id') === item) sectionElement = e;
@@ -65,6 +72,7 @@ export class ComponentsPage extends LitElement {
       left: 0,
       behavior: 'smooth'
     });
+  } catch (error) {}
   }
 
   render() {
