@@ -157,6 +157,8 @@
 
 /* 42 */
 
+/* 43 */
+
 // EXTERNAL MODULE: ./src/index.scss
 
 // CONCATENATED MODULE: ./node_modules/lit-html/lib/directive.js
@@ -1072,6 +1074,13 @@
  * @ExportDecoratedItems
  */
 
+/**
+ * A property decorator that converts a class property into a getter
+ * that executes a querySelectorAll on the element's renderRoot.
+ *
+ * @ExportDecoratedItems
+ */
+
 // Note, this is a getter so that it's lazy. In practice, this means
 
 // stylesheets are not created until the first element instance is made.
@@ -1256,13 +1265,6 @@
 // CONCATENATED MODULE: ./src/components/components.page.ts
 
 // Remove listener when element is removed from dom
-
-/**
- * A property decorator that converts a class property into a getter
- * that executes a querySelectorAll on the element's renderRoot.
- *
- * @ExportDecoratedItems
- */
 
 // CONCATENATED MODULE: ./src/components/button-overview/button-overview.component.ts
 

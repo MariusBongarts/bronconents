@@ -20,7 +20,8 @@ bronco-top-navbar.onTop {
   position: fixed;
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(to bottom, #ffffff, #fafbff, #f2f9ff, #e8f7ff, #dcf5ff, #cff2ff, #c2f0ff, #b4edff, #a3e9ff, #90e4ff, #7ce0ff, #64dbff);}
+  background-image: linear-gradient(to bottom, #ffffff, #fafbff, #f2f9ff, #e8f7ff, #dcf5ff, #cff2ff, #c2f0ff, #b4edff, #a3e9ff, #90e4ff, #7ce0ff, #64dbff);
+}
 
 .landingContainer {
   display: flex;
@@ -30,6 +31,7 @@ bronco-top-navbar.onTop {
   width: 100%;
   height: 100vh; // Subtract height of header bar
 }
+
 
 .center {
   display: flex;
