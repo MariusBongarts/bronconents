@@ -25,3 +25,10 @@
 [submodule "bronco-calendar"]
 	path = bronco-calendar
 	url = https://github.com/marius2502/bronco-calendar.git
+[submodule "bronco-chip"]
+	path = bronco-chip
+	url = https://github.com/marius2502/bronco-chip.git
+[submodule "bronco-chip-list"]
+	path = bronco-chip-list
+	url = https://github.com/marius2502/bronco-chip-list.git
+
