@@ -1,0 +1,34 @@
+:host {
+  --border-color: #78C0A8;
+  padding: 5px 2px;
+}
+
+bronco-chip {
+  margin: auto 5px;
+}
+
+.chip-list {
+  border-radius: 0;
+  border-width: 0 0 1px;
+  border-bottom: 1px solid;
+  border-bottom-color: var(--border-color);
+  padding: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.chip-list > bronco-chip {
+  padding: 5px 2px;
+}
+
+input {
+  outline: none;
+  font-size: 1.1em;
+  border: none;
+  padding: 5px;
+  margin: auto 0px;
+  width: 100px;
+  overflow: visible;
+}
+

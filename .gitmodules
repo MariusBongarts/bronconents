@@ -22,3 +22,6 @@
 [submodule "bronco-icon"]
 	path = bronco-icon
 	url = https://github.com/marius2502/bronco-icon.git
+[submodule "bronco-calendar"]
+	path = bronco-calendar
+	url = https://github.com/marius2502/bronco-calendar.git
