@@ -10,6 +10,8 @@
 </p>
 
 
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#installation)
+
 ## ➤ Installation
 
 ```
@@ -18,7 +20,11 @@ $ npm i https://github.com/marius2502/bronco-chip.git
 
 ```javascript
 import '@marius/broncochip/dist/main';
+```
 
+
+
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#bronco-chip-list)
 
 ## ➤ bronco-chip-list
 
@@ -26,23 +32,26 @@ Modern chip
 
 ### Properties
 
-| Property | Type       |
-|----------|------------|
-| `chips`  | `string[]` |
+| Property         | Type       | Default | Description                                      |
+|------------------|------------|---------|--------------------------------------------------|
+| `chips`          | `string[]` |         | Array of tags as strings                         |
+| `markedToDelete` | `boolean`  | false   | Property to prevent to fast deleting. So that user has to click backspace twice. |
 
 ### Events
 
-| Event     | Description                         |
-|-----------|-------------------------------------|
-| `clicked` | Dispatches when chip is clicked.    |
-| `removed` | Dispatched when removed is clicked. |
+| Event         | Description                                      |
+|---------------|--------------------------------------------------|
+| `tagsChanged` | Dispatched when tags changed and returns array of tags |
 
 ### CSS Custom Properties
 
-| Property     | Description        |
-|--------------|--------------------|
-| `--bg-color` | Background color   |
-| `--height`   | Height of the chip |
+| Property          | Description                         |
+|-------------------|-------------------------------------|
+| `--bg-color`      | Background color                    |
+| `--color`         | Font color                          |
+| `--font-size`     | Font size                           |
+| `--min-height`    | Min-height of the chip-list         |
+| `--primary-color` | Primary color which is set on focus |
 
 ### Slots
 
