@@ -1,5 +1,7 @@
 :host {
   --border-color: #78C0A8;
+  --bg-color: black;
+  --color: rgb(255, 255, 255);
   padding: 5px 2px;
 }
 
@@ -8,7 +10,8 @@ bronco-chip {
 }
 
 .chip-list {
-  border-radius: 0;
+  background-color: var(--bg-color);
+  border-radius: 10px;
   border-width: 0 0 1px;
   border-bottom: 1px solid;
   border-bottom-color: var(--border-color);
@@ -16,6 +19,7 @@ bronco-chip {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
+  box-shadow: 2px 2px 4px 5px rgba(120, 192, 168, 0.424);
 }
 
 .chip-list > bronco-chip {
@@ -23,12 +27,18 @@ bronco-chip {
 }
 
 input {
+  color: var(--color);
   outline: none;
   font-size: 1.1em;
   border: none;
   padding: 5px;
   margin: auto 0px;
-  width: 100px;
+  width: 70px;
   overflow: visible;
+  background: none;
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.787);
 }
 
