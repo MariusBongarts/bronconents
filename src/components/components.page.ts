@@ -15,7 +15,7 @@ export class ComponentsPage extends LitElement {
   static styles = css`${unsafeCSS(componentCSS)}`;
 
   @property()
-  components = ['bronco-button', 'bronco-corner-navbar', 'bronco-left-navbar', 'bronco-searchbar', 'bronco-side-navbar', 'bronco-template', 'bronco-top-navbar'];
+  components = ['bronco-button', 'bronco-corner-navbar', 'bronco-chip-list', 'bronco-left-navbar', 'bronco-searchbar', 'bronco-side-navbar', 'bronco-template', 'bronco-top-navbar'];
 
   @property()
   navItems!: string[];
@@ -113,6 +113,10 @@ export class ComponentsPage extends LitElement {
 
             <section id='bronco-corner-navbar'>
               <corner-navbar-overview></corner-navbar-overview>
+            </section>
+
+            <section id='bronco-chip-list'>
+              <chip-list-overview></chip-list-overview>
             </section>
 
             <section id='bronco-left-navbar'>

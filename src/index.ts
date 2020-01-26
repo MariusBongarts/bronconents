@@ -10,6 +10,7 @@ import './components/side-navbar-overview/side-navbar-overview.component';
 import './components/searchbar-overview/searchbar-overview.component';
 import './components/template-overview/template-overview.component';
 import './components/top-navbar-overview/top-navbar-overview.component';
+import './components/chip-list-overview/chip-list-overview.component';
 
 //Landing page
 import './landing-page/landing.page';
@@ -23,3 +24,5 @@ import './../bronco-top-navbar/src/components/app.component';
 import './../bronco-searchbar/src/components/app.component';
 import './../bronco-side-navbar/src/components/app.component';
 import './../bronco-template/src/components/app.component';
+import './../bronco-chip-list/src/components/app.component';
+import './../bronco-chip/src/components/app.component';

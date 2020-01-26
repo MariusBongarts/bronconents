@@ -159,6 +159,18 @@
 
 /* 43 */
 
+/* 44 */
+
+/* 45 */
+
+/* 46 */
+
+/* 47 */
+
+/* 48 */
+
+/* 49 */
+
 // EXTERNAL MODULE: ./src/index.scss
 
 // CONCATENATED MODULE: ./node_modules/lit-html/lib/directive.js
@@ -183,16 +195,37 @@
  */
 
 /**
- * Brands a function as a directive so that lit-html will call the function
- * during template rendering, rather than passing as a value.
+ * Brands a function as a directive factory function so that lit-html will call
+ * the function during template rendering, rather than passing as a value.
+ *
+ * A _directive_ is a function that takes a Part as an argument. It has the
+ * signature: `(part: Part) => void`.
+ *
+ * A directive _factory_ is a function that takes arguments for data and
+ * configuration and returns a directive. Users of directive usually refer to
+ * the directive factory as the directive. For example, "The repeat directive".
+ *
+ * Usually a template author will invoke a directive factory in their template
+ * with relevant arguments, which will then return a directive function.
+ *
+ * Here's an example of using the `repeat()` directive factory that takes an
+ * array and a function to render an item:
+ *
+ * ```js
+ * html`<ul><${repeat(items, (item) => html`<li>${item}</li>`)}</ul>`
+ * ```
+ *
+ * When `repeat` is invoked, it returns a directive function that closes over
+ * `items` and the template function. When the outer template is rendered, the
+ * return directive function is called with the Part for the expression.
+ * `repeat` then performs it's custom logic to render multiple items.
  *
  * @param f The directive factory function. Must be a function that returns a
  * function of the signature `(part: Part) => void`. The returned function will
- * be called with the part object
+ * be called with the part object.
  *
  * @example
  *
- * ```
  * import {directive, html} from 'lit-html';
  *
  * const immutable = directive((v) => (part) => {
@@ -200,20 +233,13 @@
  *     part.setValue(v)
  *   }
  * });
- * ```
  */
-
-// tslint:disable-next-line:no-any
 
 /**
  * An updateable Template that tracks the location of dynamic parts.
  */
 
 /* NodeFilter.SHOW_{ELEMENT|COMMENT|TEXT} */
-
-// Edge needs all 4 parameters present; IE11 needs 3rd parameter to be
-
-// null
 
 // Keeps track of the last index associated with a part. We try to delete
 
@@ -231,7 +257,7 @@
 
 // In particular, Edge/IE can return them out of order, so we cannot
 
-// assume a correspondance between part index and attribute index.
+// assume a correspondence between part index and attribute index.
 
 // Get the template literal section leading up to the first
 
@@ -273,11 +299,15 @@
 
 // make bindings in comments work
 
+// We've exhausted the content inside a nested template element.
+
+// Because we still have parts (the outer for-loop), we know:
+
+// - There is a template in the stack
+
+// - The walker will find a nextNode outside the template
+
 // Remove text binding nodes after the walk to not disturb the TreeWalker
-
-// Allows `document.createComment('')` to be renamed for a
-
-// small manual size-savings.
 
 //# sourceMappingURL=template.js.map
 
@@ -292,29 +322,81 @@
  * with new values.
  */
 
-// When using the Custom Elements polyfill, clone the node, rather than
+// There are a number of steps in the lifecycle of a template instance's
 
-// importing it, to keep the fragment in the template's document. This
+// DOM fragment:
 
-// leaves the fragment inert so custom elements won't upgrade and
+//  1. Clone - create the instance fragment
 
-// potentially modify their contents by creating a polyfilled ShadowRoot
+//  2. Adopt - adopt into the main document
 
-// while we traverse the tree.
+//  3. Process - find part markers and create parts
+
+//  4. Upgrade - upgrade custom elements
+
+//  5. Update - set node, attribute, property, etc., values
+
+//  6. Connect - connect to the document. Optional and outside of this
+
+//     method.
+
+//
+
+// We have a few constraints on the ordering of these steps:
+
+//  * We need to upgrade before updating, so that property values will pass
+
+//    through any property setters.
+
+//  * We would like to process before upgrading so that we're sure that the
+
+//    cloned fragment is inert and not disturbed by self-modifying DOM.
+
+//  * We want custom elements to upgrade even in disconnected fragments.
+
+// Given these constraints, with full custom elements support we would
+
+// prefer the order: Clone, Process, Adopt, Upgrade, Update, Connect
+
+// But Safari dooes not implement CustomElementRegistry#upgrade, so we
+
+// can not implement that order and still have upgrade-before-update and
+
+// upgrade disconnected fragments. So we instead sacrifice the
+
+// process-before-upgrade constraint, since in Custom Elements v1 elements
+
+// must not modify their light DOM in the constructor. We still have issues
+
+// when co-existing with CEv0 elements like Polymer 1, and with polyfills
+
+// that don't strictly adhere to the no-modification rule because shadow
+
+// DOM, which may be created in the constructor, is emulated by being placed
+
+// in the light DOM.
+
+// The resulting order is on native is: Clone, Adopt, Upgrade, Process,
+
+// Update, Connect. document.importNode() performs Clone, Adopt, and Upgrade
+
+// in one step.
+
+// The Custom Elements v1 polyfill supports upgrade(), so the order when
+
+// polyfilled is the more ideal: Clone, Process, Adopt, Upgrade, Update,
+
+// Connect.
 
 // Loop through all the nodes and parts of a template
 
-// Consecutive Parts may have the same node index, in the case of
+// Progress the tree walker until we find our next part's node.
 
-// multiple bound attributes on an element. So each iteration we either
+// Note that multiple parts may share the same node (attribute parts
 
-// increment the nodeIndex, if we aren't on a node with a part, or the
+// on a single element), so this loop may not run at all.
 
-// partIndex if we are. By not incrementing the nodeIndex when we find a
-
-// part, we allow for the next part to be associated with the current
-
-// node if neccessasry.
+// We've arrived at our part's node.
 
 //# sourceMappingURL=template-instance.js.map
 
@@ -329,34 +411,64 @@
      * Returns a string of HTML used to create a `<template>` element.
      */
 
-// This exec() call does two things:
+// For each binding we want to determine the kind of marker to insert
 
-// 1) Appends a suffix to the bound attribute name to opt out of special
+// into the template source before it's parsed by the browser's HTML
 
-// attribute value parsing that IE11 and Edge do, like for style and
+// parser. The marker type is based on whether the expression is in an
 
-// many SVG attributes. The Template class also appends the same suffix
+// attribute, text, or comment poisition.
 
-// when looking up attributes to create Parts.
+//   * For node-position bindings we insert a comment with the marker
 
-// 2) Adds an unquoted-attribute-safe marker for the first expression in
+//     sentinel as its text content, like <!--{{lit-guid}}-->.
 
-// an attribute. Subsequent attribute expressions will use node markers,
+//   * For attribute bindings we insert just the marker sentinel for the
 
-// and this is safe since attributes with multiple expressions are
+//     first binding, so that we support unquoted attribute bindings.
 
-// guaranteed to be quoted.
+//     Subsequent bindings can use a comment marker because multi-binding
 
-// We're starting a new bound attribute.
+//     attributes must be quoted.
 
-// Add the safe attribute suffix, and use unquoted-attribute-safe
+//   * For comment bindings we insert just the marker sentinel so we don't
 
-// marker.
+//     close the comment.
+
+// The following code scans the template source, but is *not* an HTML
+
+// parser. We don't need to track the tree structure of the HTML, only
+
+// whether a binding is inside a comment, and if not, if it appears to be
+
+// the first binding in an attribute.
+
+// We're in comment position if we have a comment open with no following
+
+// comment close. Because <-- can appear in an attribute value there can
+
+// be false positives.
+
+// Check to see if we have an attribute-like sequence preceeding the
+
+// expression. This can match "name=value" like structures in text,
+
+// comments, and attribute values, so there can be false-positives.
+
+// We're only in this branch if we don't have a attribute-like
+
+// preceeding sequence. For comments, this guards against unusual
+
+// attribute values like <div foo="<!--${'bar'}">. Cases like
+
+// <!-- foo=${'bar'}--> are handled correctly in the attribute branch
+
+// below.
 
 /**
  * A TemplateResult for SVG fragments.
  *
- * This class wraps HTMl in an `<svg>` tag in order to parse its contents in the
+ * This class wraps HTML in an `<svg>` tag in order to parse its contents in the
  * SVG namespace, then modifies the template to remove the `<svg>` tag so that
  * clones only container the original fragment.
  */
@@ -365,14 +477,21 @@
 
 // CONCATENATED MODULE: ./node_modules/lit-html/lib/parts.js
 
+// tslint:disable-next-line:no-any
+
 /**
- * Sets attribute values for AttributeParts, so that the value is only set once
- * even if there are multiple parts for an attribute.
+ * Writes attribute values to the DOM for a group of AttributeParts bound to a
+ * single attibute. The value is only set once even if there are multiple parts
+ * for an attribute.
  */
 
 /**
      * Creates a single part. Override this to create a differnt type of part.
      */
+
+/**
+ * A Part that controls all or part of an attribute value.
+ */
 
 // If the value is a not a directive, dirty the committer so that it'll
 
@@ -381,15 +500,24 @@
 // committer if it calls setValue().
 
 /**
-     * Inserts this part into a container.
+ * A Part that controls a location within a Node tree. Like a Range, NodePart
+ * has start and end locations and can set and update the Nodes between those
+ * locations.
+ *
+ * NodeParts support several value types: primitives, Nodes, TemplateResults,
+ * as well as arrays and iterables of those types.
+ */
+
+/**
+     * Appends this part into a container.
      *
      * This part must be empty, as its contents are not automatically moved.
      */
 
 /**
-     * Inserts this part between `ref` and `ref`'s next sibling. Both `ref` and
-     * its next sibling must be static, unchanging nodes such as those that appear
-     * in a literal section of a template.
+     * Inserts this part after the `ref` node (between `ref` and `ref`'s next
+     * sibling). Both `ref` and its next sibling must be static, unchanging nodes
+     * such as those that appear in a literal section of a template.
      *
      * This part must be empty, as its contents are not automatically moved.
      */
@@ -401,7 +529,7 @@
      */
 
 /**
-     * Appends this part after `ref`
+     * Inserts this part after the `ref` part.
      *
      * This part must be empty, as its contents are not automatically moved.
      */
@@ -623,6 +751,12 @@
  * @param scopeName {string}
  */
 
+// If `renderedDOM` is stamped from a Template, then we need to edit that
+
+// Template's underlying template element. Otherwise, we create one here
+
+// to give to ShadyCSS, which still requires one while scoping.
+
 // Move styles out of rendered DOM and store.
 
 // If there are no styles, skip unnecessary work
@@ -632,6 +766,18 @@
 // styles via `prepareAdoptedCssText` since that requires that
 
 // `prepareTemplateStyles` is called.
+
+// ShadyCSS will only update styles containing @apply in the template
+
+// given to `prepareTemplateStyles`. If no lit Template was given,
+
+// ShadyCSS will not be able to update uses of @apply in any relevant
+
+// template. However, this is not a problem because we only create the
+
+// template for the purpose of supporting `prepareAdoptedCssText`,
+
+// which doesn't support @apply at all.
 
 // Collect styles into a single style. This helps us make sure ShadyCSS
 
@@ -669,25 +815,25 @@
 
 // needed (e.g. @apply native Shadow DOM case).
 
-// When in native Shadow DOM, re-add styling to rendered content using
+// When in native Shadow DOM, ensure the style created by ShadyCSS is
 
-// the style ShadyCSS produced.
+// included in initially rendered output (`renderedDOM`).
 
-// When not in native Shadow DOM, at this point ShadyCSS will have
-
-// removed the style from the lit template and parts will be broken as a
+// When no style is left in the template, parts will be broken as a
 
 // result. To fix this, we put back the style node ShadyCSS removed
 
 // and then tell lit to remove that node from the template.
 
+// There can be no style in the template in 2 cases (1) when Shady DOM
+
+// is in use, ShadyCSS removes all styles, (2) when native Shadow DOM
+
+// is in use ShadyCSS removes the style if it contains no content.
+
 // NOTE, ShadyCSS creates its own style so we can safely add/remove
 
 // `condensedStyle` here.
-
-//# sourceMappingURL=shady-render.js.map
-
-// CONCATENATED MODULE: ./node_modules/lit-element/lib/updating-element.js
 
 /**
  * When using Closure Compiler, JSCompiler_renameProperty(property, object) is
@@ -828,7 +974,9 @@
      * registered properties.
      */
 
-// ensures first update will be caught by an early access of `updateComplete`
+// ensures first update will be caught by an early access of
+
+// `updateComplete`
 
 /**
      * Fixes any properties set on the instance before upgrade time.
@@ -847,13 +995,13 @@
      * Applies previously saved instance properties.
      */
 
-// Ensure first connection completes an update. Updates cannot complete before
+// Ensure first connection completes an update. Updates cannot complete
 
-// connection and if one is pending connection the `_hasConnectionResolver`
+// before connection and if one is pending connection the
 
-// will exist. If so, resolve it to complete the update, otherwise
+// `_hasConnectionResolver` will exist. If so, resolve it to complete the
 
-// requestUpdate.
+// update, otherwise requestUpdate.
 
 /**
      * Allows for `super.disconnectedCallback()` in extensions while
@@ -973,13 +1121,32 @@
      * The Promise value is a boolean that is `true` if the element completed the
      * update without triggering another update. The Promise result is `false` if
      * a property was set inside `updated()`. If the Promise is rejected, an
-     * exception was thrown during the update. This getter can be implemented to
-     * await additional state. For example, it is sometimes useful to await a
-     * rendered element before fulfilling this Promise. To do this, first await
-     * `super.updateComplete` then any subsequent state.
+     * exception was thrown during the update.
+     *
+     * To await additional asynchronous work, override the `_getUpdateComplete`
+     * method. For example, it is sometimes useful to await a rendered element
+     * before fulfilling this Promise. To do this, first await
+     * `super._getUpdateComplete()`, then any subsequent state.
      *
      * @returns {Promise} The Promise returns a boolean that indicates if the
      * update resolved without triggering another update.
+     */
+
+/**
+     * Override point for the `updateComplete` promise.
+     *
+     * It is not safe to override the `updateComplete` getter directly due to a
+     * limitation in TypeScript which means it is not possible to call a
+     * superclass getter (e.g. `super.updateComplete.then(...)`) when the target
+     * language is ES5 (https://github.com/microsoft/TypeScript/issues/338).
+     * This method should be overridden instead. For example:
+     *
+     *   class MyElement extends LitElement {
+     *     async _getUpdateComplete() {
+     *       await super._getUpdateComplete();
+     *       await this._myChild.updateComplete;
+     *     }
+     *   }
      */
 
 /**
@@ -1057,8 +1224,6 @@
 
 // ],
 
-// tslint:disable-next-line:no-any decorator
-
 /**
  * A property decorator which creates a LitElement property which reflects a
  * corresponding attribute value. A `PropertyDeclaration` may optionally be
@@ -1066,6 +1231,8 @@
  *
  * @ExportDecoratedItems
  */
+
+// tslint:disable-next-line:no-any decorator
 
 /**
  * A property decorator that converts a class property into a getter that
@@ -1110,6 +1277,10 @@
  * @param arr the array to flatten
  * @param result the accumlated result
  */
+
+// The Closure JS Compiler does not always preserve the correct "this"
+
+// when calling static super methods (b/137460243), so explicitly bind.
 
 // Prepare styling that is stamped at first render time. Styling
 
@@ -1199,6 +1370,9 @@
 /**
  * Ensure this class is marked as `finalized` as an optimization ensuring
  * it will not needlessly try to `finalize`.
+ *
+ * Note this property name is a string to prevent breaking Closure JS Compiler
+ * optimizations. See updating-element.ts for more information.
  */
 
 /**
@@ -1228,6 +1402,16 @@
 
 // DOM will be re-used on subsequent renders.
 
+// ShadyCSS might have style sheets (e.g. from `prepareAdoptedCssText`)
+
+// that should apply to `renderContainer` even if the rendered value is
+
+// not a TemplateInstance. However, it will only insert scoped styles
+
+// into the document if `prepareTemplateStyles` has already been called
+
+// for the given scope name.
+
 // After elements have hit the DOM, update styling if this is the
 
 // initial render to this container.
@@ -1236,7 +1420,7 @@
 
 // safest to do every render; however, this would regress performance
 
-// so we leave it up to the user to call `ShadyCSSS.styleElement`
+// so we leave it up to the user to call `ShadyCSS.styleElement`
 
 // for dynamic changes.
 
@@ -1250,17 +1434,16 @@
 
 // e. g. 'user/sign-in' (without leading slash)
 
+// it has a non-default target
+
+// target URL is a fragment on the current page
+
 // CONCATENATED MODULE: ./src/app/app.component.ts
 
 /**
  * @author Marius Bongarts
  * Root web component
  */
-
-/**
-     * @author Marius Bongarts
-     * Root web component
-     */
 
 // CONCATENATED MODULE: ./src/components/components.page.ts
 
@@ -1280,15 +1463,127 @@
 
 // CONCATENATED MODULE: ./src/components/top-navbar-overview/top-navbar-overview.component.ts
 
+// CONCATENATED MODULE: ./src/components/chip-list-overview/chip-list-overview.component.ts
+
 // CONCATENATED MODULE: ./src/landing-page/landing.page.ts
 
 // CONCATENATED MODULE: ./bronco-button/node_modules/lit-html/lib/directive.js
 
+/**
+ * Brands a function as a directive so that lit-html will call the function
+ * during template rendering, rather than passing as a value.
+ *
+ * @param f The directive factory function. Must be a function that returns a
+ * function of the signature `(part: Part) => void`. The returned function will
+ * be called with the part object
+ *
+ * @example
+ *
+ * ```
+ * import {directive, html} from 'lit-html';
+ *
+ * const immutable = directive((v) => (part) => {
+ *   if (part.value !== v) {
+ *     part.setValue(v)
+ *   }
+ * });
+ * ```
+ */
+
+// Edge needs all 4 parameters present; IE11 needs 3rd parameter to be
+
+// null
+
+// assume a correspondance between part index and attribute index.
+
+// Allows `document.createComment('')` to be renamed for a
+
+// small manual size-savings.
+
 // CONCATENATED MODULE: ./bronco-button/node_modules/lit-html/lib/template-instance.js
+
+// When using the Custom Elements polyfill, clone the node, rather than
+
+// importing it, to keep the fragment in the template's document. This
+
+// leaves the fragment inert so custom elements won't upgrade and
+
+// potentially modify their contents by creating a polyfilled ShadowRoot
+
+// while we traverse the tree.
+
+// Consecutive Parts may have the same node index, in the case of
+
+// multiple bound attributes on an element. So each iteration we either
+
+// increment the nodeIndex, if we aren't on a node with a part, or the
+
+// partIndex if we are. By not incrementing the nodeIndex when we find a
+
+// part, we allow for the next part to be associated with the current
+
+// node if neccessasry.
 
 // CONCATENATED MODULE: ./bronco-button/node_modules/lit-html/lib/template-result.js
 
+// This exec() call does two things:
+
+// 1) Appends a suffix to the bound attribute name to opt out of special
+
+// attribute value parsing that IE11 and Edge do, like for style and
+
+// many SVG attributes. The Template class also appends the same suffix
+
+// when looking up attributes to create Parts.
+
+// 2) Adds an unquoted-attribute-safe marker for the first expression in
+
+// an attribute. Subsequent attribute expressions will use node markers,
+
+// and this is safe since attributes with multiple expressions are
+
+// guaranteed to be quoted.
+
+// We're starting a new bound attribute.
+
+// Add the safe attribute suffix, and use unquoted-attribute-safe
+
+// marker.
+
+/**
+ * A TemplateResult for SVG fragments.
+ *
+ * This class wraps HTMl in an `<svg>` tag in order to parse its contents in the
+ * SVG namespace, then modifies the template to remove the `<svg>` tag so that
+ * clones only container the original fragment.
+ */
+
 // CONCATENATED MODULE: ./bronco-button/node_modules/lit-html/lib/parts.js
+
+/**
+ * Sets attribute values for AttributeParts, so that the value is only set once
+ * even if there are multiple parts for an attribute.
+ */
+
+/**
+     * Inserts this part into a container.
+     *
+     * This part must be empty, as its contents are not automatically moved.
+     */
+
+/**
+     * Inserts this part between `ref` and `ref`'s next sibling. Both `ref` and
+     * its next sibling must be static, unchanging nodes such as those that appear
+     * in a literal section of a template.
+     *
+     * This part must be empty, as its contents are not automatically moved.
+     */
+
+/**
+     * Appends this part after `ref`
+     *
+     * This part must be empty, as its contents are not automatically moved.
+     */
 
 // CONCATENATED MODULE: ./bronco-button/node_modules/lit-html/lib/default-template-processor.js
 
@@ -1300,11 +1595,52 @@
 
 // CONCATENATED MODULE: ./bronco-button/node_modules/lit-html/lib/shady-render.js
 
+// When in native Shadow DOM, re-add styling to rendered content using
+
+// the style ShadyCSS produced.
+
+// When not in native Shadow DOM, at this point ShadyCSS will have
+
+// removed the style from the lit template and parts will be broken as a
+
+//# sourceMappingURL=shady-render.js.map
+
 // CONCATENATED MODULE: ./bronco-button/node_modules/lit-element/lib/updating-element.js
+
+// ensures first update will be caught by an early access of `updateComplete`
+
+// Ensure first connection completes an update. Updates cannot complete before
+
+// connection and if one is pending connection the `_hasConnectionResolver`
+
+// will exist. If so, resolve it to complete the update, otherwise
+
+// requestUpdate.
+
+/**
+     * Returns a Promise that resolves when the element has completed updating.
+     * The Promise value is a boolean that is `true` if the element completed the
+     * update without triggering another update. The Promise result is `false` if
+     * a property was set inside `updated()`. If the Promise is rejected, an
+     * exception was thrown during the update. This getter can be implemented to
+     * await additional state. For example, it is sometimes useful to await a
+     * rendered element before fulfilling this Promise. To do this, first await
+     * `super.updateComplete` then any subsequent state.
+     *
+     * @returns {Promise} The Promise returns a boolean that indicates if the
+     * update resolved without triggering another update.
+     */
 
 // CONCATENATED MODULE: ./bronco-button/node_modules/lit-element/lib/decorators.js
 
 // CONCATENATED MODULE: ./bronco-button/node_modules/lit-element/lit-element.js
+
+/**
+ * Ensure this class is marked as `finalized` as an optimization ensuring
+ * it will not needlessly try to `finalize`.
+ */
+
+// so we leave it up to the user to call `ShadyCSSS.styleElement`
 
 // CONCATENATED MODULE: ./bronco-button/src/components/app.component.ts
 
@@ -1328,27 +1664,6 @@
  * @cssprop --primary-color-hover - Hover background color
  *
  */
-
-/**
-     * Modern button
-     * @event clicked - Dispatches when button is clicked.
-     * @slot - Default content.
-     * @cssprop --bg-color - Background color
-     * @cssprop --bg-color-focus - Background color when focused
-     * @cssprop --bg-color-hover - Background color when hovered
-     * @cssprop --bg-color-focus-hover - Background color when focused and hovered
-     * @cssprop --border-radius - Border radius
-     * @cssprop --button-color-shadow - Shadow color when not focused
-     * @cssprop --button-color-shadow-focus - Shadow color when focused
-     * @cssprop --color - text color
-     * @cssprop --color-focus-hover - text color when focused and hovered
-     * @cssprop --height - Height of button
-     * @cssprop --margin - Margin of button
-     * @cssprop --min-width - Width of button
-     * @cssprop --primary-color - Change primary color easily
-     * @cssprop --primary-color-hover - Hover background color
-     *
-     */
 
 /**
          *
@@ -1391,15 +1706,10 @@
 
 /**
  * This web component easily produces icons
+ * @cssprop --box-shadow box shadow attribute. Default: none
  * @cssprop --color - Color of the icon
  * @cssprop --size - Size of the icon
  */
-
-/**
-     * This web component easily produces icons
-     * @cssprop --color - Color of the icon
-     * @cssprop --size - Size of the icon
-     */
 
 /**
          *
@@ -1505,29 +1815,6 @@
  */
 
 /**
-     * Modern left navbar built with Lit-Element
-     * @event selected - Dispatches a CustomEvent when nav item is selected. Selected item is stored in detail of Custom event
-     * @cssprop --bg-color - Background color
-     * @cssprop --bg-color-hover - Background color when hovered
-     * @cssprop --bg-color-item - Background color of nav item
-     * @cssprop --color - text color
-     * @cssprop --color-hover - text color when hovered
-     * @cssprop --color-selected - text color when item is selected
-     * @cssprop --item-width - Width of nav items
-     * @cssprop --item-height - Height of nav items
-     * @cssprop --margin-top - Margin to the top
-     * @cssprop --padding-top - Defines where navItems should begin
-     * @cssprop --position - Possible change position attribute
-     * @cssprop --primary-color - Change primary color easily
-     * @cssprop --rotation-3d - Customize the rotation of the rotation effect by changing degree (Default: 10deg)
-     * @cssprop --shadow-x - Shadow-x of button
-     * @cssprop --shadow-y - Shadow-y of button
-     * @cssprop --sidebar-width - Width of sidebar
-     * @cssprop --sidebar-min-height - Height of sidebar
-     * @cssprop --z-index - Default: 1
-     */
-
-/**
          * Takes an array to set the nav items of this components
          * @type {string[]}
          * @memberof BroncoLeftNavbar
@@ -1591,27 +1878,6 @@
  * @cssprop --top - Position of icon
  * @cssprop --z-index - Default: 3
  */
-
-/**
-     * Modern corner circular navbar built with Lit-Element
-     * @event selected - Dispatches a CustomEvent when nav item is selected. Selected item is stored in detail of Custom event
-     * @cssprop --bg-color-item - Background color of item, when not hovered or selected
-     * @cssprop --circle-color-transparent1 - First, less transparent, color of circle
-     * @cssprop --circle-color-transparent2 - Second, more transparent, color of circle
-     * @cssprop --circle-radius - Sets the radius of the inner circle
-     * @cssprop --color - text color
-     * @cssprop --bg-color-hover - Color when item is hovered
-     * @cssprop --item-radius - Radius of the nav items inside of circle
-     * @cssprop --item-shadow - Shadow of item, when not selected
-     * @cssprop --item-shadow-selected - Shadow of item, when selected
-     * @cssprop --position - Default: fixed
-     * @cssprop --primary-color - Change primary color easily
-     * @cssprop --right - Position of icon
-     * @cssprop --shadow-x - Shadow-x of item
-     * @cssprop --shadow-y - Shadow-y of item
-     * @cssprop --top - Position of icon
-     * @cssprop --z-index - Default: 3
-     */
 
 /**
          * Takes an array to set (minimum: 3, maximum 5) nav items, of this component
@@ -1684,20 +1950,6 @@
  * @cssprop --width - Navbar width. Default: 100%
  * @cssprop --z-index - Default: 2
  */
-
-/**
-     * Modern Top circular navbar built with Lit-Element
-     * @event selected - Dispatches a CustomEvent when nav item is selected. Selected item is stored in detail of Custom event
-     * @cssprop --bg-color - Background color of item, when not hovered or selected
-     * @cssprop --box-shadow - Shadow of top bar
-     * @cssprop --color - text color
-     * @cssprop --color-hover - text color of item when hovered
-     * @cssprop --height - Navbar height
-     * @cssprop --position - Positioning of navBar. Default: fixed
-     * @cssprop --primary-color - Change primary color easily
-     * @cssprop --width - Navbar width. Default: 100%
-     * @cssprop --z-index - Default: 2
-     */
 
 /**
          * Makes the navbar disappear on mobile devices
@@ -1783,13 +2035,6 @@
  */
 
 /**
-     * Searchbar with suggestions
-     * @event selected - Dispatches a CustomEvent when search item is selected. Selected item is stored in detail of Custom event
-     * @cssprop --box-width - Set to less than 100% to have an animation on focus
-     * @cssprop --bg-color - Background color of navitem
-     */
-
-/**
          *
          * Index of focused suggestion
          * @type {number}
@@ -1852,21 +2097,6 @@
  * @cssprop --sidebar-min-height - Sidebar min height. Default: inherit
  * @cssprop --sidebar-width - Sidebar width. Default: 100%;
  */
-
-/**
-     * Left sidebar. To include icons following has to be included in index.html  => <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-     * @event selected - Dispatches a CustomEvent when nav item is selected. Selected item is stored in detail of Custom event
-     * @cssprop --bg-color - Background color of navitem
-     * @cssprop --bg-color-hover - Hover background color of navItem
-     * @cssprop --bg-color-icon-hover - Hover color of icon
-     * @cssprop --box-shadow - Box shadow
-     * @cssprop --color - Font color
-     * @cssprop --padding-y - Defines padding-y
-     * @cssprop --position - Position of ul
-     * @cssprop --primary-color - Change primary color easily
-     * @cssprop --sidebar-min-height - Sidebar min height. Default: inherit
-     * @cssprop --sidebar-width - Sidebar width. Default: 100%;
-     */
 
 /**
          * Makes the navbar disappear on mobile devices
@@ -1940,18 +2170,6 @@
  */
 
 /**
-     * Left sidebar. To include icons following has to be included in index.html  => <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-     * @slot header - Slot to set header bar
-     * @slot nav - Slot to set left nav bar
-     * @slot main - Slot to set main content
-     * @cssprop --bg - Defines the background
-     * @cssprop --nav-width - Defines the width of the left nav bar
-     * @cssprop --shadow-header - Defines shadow of the header
-     * @cssprop --shadow-nav - Defines shadow of the nav
-     *
-     */
-
-/**
          *
          * Set this to true to hide the nav bar on default
          * @memberof BroncoTemplate
@@ -1966,4 +2184,146 @@
          * Boolean if mobile device
          * @type {boolean}
          * @memberof BroncoTemplate
+         */
+
+// CONCATENATED MODULE: ./bronco-chip-list/node_modules/lit-html/lib/directive.js
+
+// CONCATENATED MODULE: ./bronco-chip-list/node_modules/lit-html/lib/template-instance.js
+
+// CONCATENATED MODULE: ./bronco-chip-list/node_modules/lit-html/lib/template-result.js
+
+// CONCATENATED MODULE: ./bronco-chip-list/node_modules/lit-html/lib/parts.js
+
+// CONCATENATED MODULE: ./bronco-chip-list/node_modules/lit-html/lib/default-template-processor.js
+
+// CONCATENATED MODULE: ./bronco-chip-list/node_modules/lit-html/lib/template-factory.js
+
+// CONCATENATED MODULE: ./bronco-chip-list/node_modules/lit-html/lib/render.js
+
+// CONCATENATED MODULE: ./bronco-chip-list/node_modules/lit-html/lit-html.js
+
+// CONCATENATED MODULE: ./bronco-chip-list/node_modules/lit-html/lib/shady-render.js
+
+// CONCATENATED MODULE: ./bronco-chip-list/node_modules/lit-element/lib/updating-element.js
+
+// CONCATENATED MODULE: ./bronco-chip-list/node_modules/lit-element/lib/decorators.js
+
+// CONCATENATED MODULE: ./bronco-chip-list/node_modules/lit-element/lit-element.js
+
+// CONCATENATED MODULE: ./bronco-chip-list/src/components/app.component.ts
+
+/**
+ * Modern chip
+ * @event tagsChanged - Dispatched when tags changed and returns array of tags
+ * @event submitTriggered - Submit event when user enters 'ENTER' twise
+ * @slot - Default content.
+ * @cssprop --bg-color - Background color
+ * @cssprop --color - Font color
+ * @cssprop --font-size - Font size
+ * @cssprop --min-height - Min-height of the chip-list
+ * @cssprop --primary-color - Primary color which is set on focus
+ *
+ */
+
+/**
+         * Array of tags as strings
+         *
+         * @memberof BroncoChipList
+         */
+
+/**
+         * Property to set focus on input initially
+         *
+         * @memberof BroncoChipList
+         */
+
+/**
+         * Property to prevent to fast deleting. So that user has to click backspace twice.
+         *
+         * @memberof BroncoChipList
+         */
+
+/**
+         * Property to trigger submit after entering ENTER twice
+         *
+         * @memberof BroncoChipList
+         */
+
+/**
+     * Listen to keyboard event to either add or remove tags
+     * Tags are being added when user enters space or enter
+     *
+     * @param {KeyboardEvent} e
+     * @memberof BroncoChipList
+     */
+
+/**
+     * Adds a tag if current value is not empty.
+     * It splits the current value by space
+     *
+     * @param {HTMLInputElement} target
+     * @memberof BroncoChipList
+     */
+
+/**
+     * Deletes a tag if it is already markes as deleted.
+     *
+     * @param {HTMLInputElement} target
+     * @memberof BroncoChipList
+     */
+
+// CONCATENATED MODULE: ./bronco-chip/node_modules/lit-html/lib/directive.js
+
+// CONCATENATED MODULE: ./bronco-chip/node_modules/lit-html/lib/template-instance.js
+
+// CONCATENATED MODULE: ./bronco-chip/node_modules/lit-html/lib/template-result.js
+
+// CONCATENATED MODULE: ./bronco-chip/node_modules/lit-html/lib/parts.js
+
+// CONCATENATED MODULE: ./bronco-chip/node_modules/lit-html/lib/default-template-processor.js
+
+// CONCATENATED MODULE: ./bronco-chip/node_modules/lit-html/lib/template-factory.js
+
+// CONCATENATED MODULE: ./bronco-chip/node_modules/lit-html/lib/render.js
+
+// CONCATENATED MODULE: ./bronco-chip/node_modules/lit-html/lit-html.js
+
+// CONCATENATED MODULE: ./bronco-chip/node_modules/lit-html/lib/shady-render.js
+
+// CONCATENATED MODULE: ./bronco-chip/node_modules/lit-element/lib/updating-element.js
+
+// CONCATENATED MODULE: ./bronco-chip/node_modules/lit-element/lib/decorators.js
+
+// CONCATENATED MODULE: ./bronco-chip/node_modules/lit-element/lit-element.js
+
+// CONCATENATED MODULE: ./bronco-chip/src/components/app.component.ts
+
+/**
+ * Modern chip
+ * @event clicked - Dispatches when chip is clicked.
+ * @event removed - Dispatched when removed is clicked.
+ * @slot - Default content.
+ * @cssprop --bg-color - Background color
+ * @cssprop --height - Height of the chip
+ *
+ */
+
+/**
+         *
+         * If true, trash icon will be shown with red background
+         * @type {boolean}
+         * @memberof BroncoChip
+         */
+
+/**
+         *
+         * Makes the chip outlined
+         * @type {boolean}
+         * @memberof BroncoChip
+         */
+
+/**
+         * Enables the outline effect after clicking
+         * @type {boolean}
+         * @memberof BroncoChip
          */

@@ -31,7 +31,7 @@ Welcome to @marius/bronconents. This is version 1.0.0!
 
 ## ➤ Live demo
 
-See the components [here](https://bongarts.net).
+See the components [here](http://bronconents.com/).
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#installation)
@@ -52,15 +52,15 @@ import '@marius/[packagename]/dist/main';
 ## ➤ Elements
 
 
-| Name          | Tag                    | Description                       | Documentation                                    | Demo                          |
-|---------------|------------------------|-----------------------------------|--------------------------------------------------|-------------------------------|
-| Button        | `bronco-button`        | Modern button                     | [Documentation](https://github.com/marius2502/bronco-button) | [Demo](https://bongarts.net/) |
-| Corner Navbar | `bronco-corner-navbar` | Modern circular navbar            | [Documentation](https://github.com/marius2502/bronco-corner-navbar) | [Demo](https://bongarts.net/) |
-| Icon          | `bronco-icon`          | Ready to use icons                | [Documentation](https://github.com/marius2502/bronco-icon) | [Demo](https://bongarts.net/) |
-| Left Navbar   | `bronco-left-navbar`   | Modern left side navbar           | [Documentation](https://github.com/marius2502/bronco-left-navbar) | [Demo](https://bongarts.net/) |
-| Searchbar     | `bronco-searchbar`     | Modern searchbar with suggestions | [Documentation](https://github.com/marius2502/bronco-searchbar) | [Demo](https://bongarts.net/) |
-| Side Navbar   | `bronco-side-navbar`   | Modern left side navbar           | [Documentation](https://github.com/marius2502/bronco-side-navbar) | [Demo](https://bongarts.net/) |
-| Top Navbar    | `bronco-top-navbar`    | Modern and responsive top bar     | [Documentation](https://github.com/marius2502/bronco-top-navbar) | [Demo](https://bongarts.net/) |
+| Name          | Tag                    | Description                       | Documentation                                    | Demo                             |
+|---------------|------------------------|-----------------------------------|--------------------------------------------------|----------------------------------|
+| Button        | `bronco-button`        | Modern button                     | [Documentation](https://github.com/marius2502/bronco-button) | [Demo](http://bronconents.com//) |
+| Corner Navbar | `bronco-corner-navbar` | Modern circular navbar            | [Documentation](https://github.com/marius2502/bronco-corner-navbar) | [Demo](http://bronconents.com//) |
+| Icon          | `bronco-icon`          | Ready to use icons                | [Documentation](https://github.com/marius2502/bronco-icon) | [Demo](http://bronconents.com//) |
+| Left Navbar   | `bronco-left-navbar`   | Modern left side navbar           | [Documentation](https://github.com/marius2502/bronco-left-navbar) | [Demo](http://bronconents.com//) |
+| Searchbar     | `bronco-searchbar`     | Modern searchbar with suggestions | [Documentation](https://github.com/marius2502/bronco-searchbar) | [Demo](http://bronconents.com//) |
+| Side Navbar   | `bronco-side-navbar`   | Modern left side navbar           | [Documentation](https://github.com/marius2502/bronco-side-navbar) | [Demo](http://bronconents.com//) |
+| Top Navbar    | `bronco-top-navbar`    | Modern and responsive top bar     | [Documentation](https://github.com/marius2502/bronco-top-navbar) | [Demo](http://bronconents.com//) |
 
 
 
@@ -69,9 +69,9 @@ import '@marius/[packagename]/dist/main';
 ## ➤ Contributors
 	
 
-| [<img alt="Marius Bongarts" src="https://avatars2.githubusercontent.com/u/38838885?s=460&v=4" width="100">](https://bongarts.net/) | [<img alt="You?" src="https://joeschmoe.io/api/v1/random" width="100">](https://github.com/andreasbm/readme/blob/master/CONTRIBUTING.md) |
+| [<img alt="Marius Bongarts" src="https://avatars2.githubusercontent.com/u/38838885?s=460&v=4" width="100">](http://bronconents.com//) | [<img alt="You?" src="https://joeschmoe.io/api/v1/random" width="100">](https://github.com/andreasbm/readme/blob/master/CONTRIBUTING.md) |
 |:--------------------------------------------------:|:--------------------------------------------------:|
-| [Marius Bongarts](https://bongarts.net/)         | [You?](https://github.com/andreasbm/readme/blob/master/CONTRIBUTING.md) |
+| [Marius Bongarts](http://bronconents.com//)      | [You?](https://github.com/andreasbm/readme/blob/master/CONTRIBUTING.md) |
 | [marius@bongarts.net](mailto:marius@bongarts.net) |                                                  |
 | 🔥                                               |                                                  |
 
